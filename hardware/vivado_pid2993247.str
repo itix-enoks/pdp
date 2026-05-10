@@ -1,0 +1,461 @@
+/*
+
+AMD Vivado v2024.2 (64-bit) [Major: 2024, Minor: 2]
+SW Build: 5239630 on Fri Nov 08 22:34:34 MST 2024
+IP Build: 5239520 on Sun Nov 10 16:12:51 MST 2024
+IP Build: 5239520 on Sun Nov 10 16:12:51 MST 2024
+
+Process ID (PID): 2993247
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Thu Apr 30 16:27:58 CEST 2026
+Time zone: 	Central European Standard Time (Europe/Amsterdam)
+
+OS: Red Hat Enterprise Linux release 9.7 (Plow)
+OS Version: 5.14.0-570.49.1.el9_6.x86_64
+OS Architecture: amd64
+Available processors (cores): 64
+LSB Release Description: Red Hat Enterprise Linux release 9.7 (Plow)
+
+Display: 56
+Screen size: 800x600
+Local screen bounds: x = 0, y = 25, width = 800, height = 551
+Screen resolution (DPI): 98
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+OS font scaling: 98%
+Anti-Alias Enabled: false
+
+Java version: 	21.0.1 64-bit
+
+Java home: 	/data/apps/xilinx/Vivado/2024.2/tps/lnx64/jre21.0.1_12
+Java executable: 	/data/apps/xilinx/Vivado/2024.2/tps/lnx64/jre21.0.1_12/bin/java
+Java arguments: 	[-Dsun.java2d.pmoffscreen=false, -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2, -Dsun.java2d.xrender=false, -Dsun.java2d.uiScale.enabled=false, -Dswing.aatext=true, -XX:-UsePerfData, -Djdk.map.althashing.threshold=512, -XX:StringTableSize=4072, -XX:+UseStringDeduplication, -XX:MaxGCPauseMillis=200, -XX:ParallelGCThreads=4, -XX:+ParallelRefProcEnabled, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.desktop/sun.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/java.awt.event=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.base/java.nio=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.table=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.desktop/sun.awt.shell=ALL-UNNAMED, --add-exports=java.base/sun.security.action=ALL-UNNAMED, --add-exports=java.desktop/sun.font=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, -XX:NewSize=80m, -XX:MaxNewSize=80m, -Xms512m, -Xmx4072m, -Xss10m, -Xrs]
+Java initial memory (-Xms): 	512 MB
+Java maximum memory (-Xmx):	 3 GB
+
+User name: 	cese4040-08
+User home directory: /data2/home/cese4040-08
+User working directory: /data2/home/cese4040-08/pdp-project-08/hardware
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /data/apps/xilinx/Vivado
+HDI_APPROOT: /opt/apps/xilinx/Vivado/2024.2
+RDI_DATADIR: /data/apps/xilinx/SharedData/2024.2/data:/opt/apps/xilinx/Vivado/2024.2/data
+RDI_BINDIR: /data/apps/xilinx/Vivado/2024.2/bin
+
+Vivado preferences file: /data/home/cese4040-08/.Xilinx/Vivado/2024.2/vivado.xml
+Vivado preferences directory: /data/home/cese4040-08/.Xilinx/Vivado/2024.2/
+Vivado layouts directory: /data2/home/cese4040-08/.Xilinx/Vivado/2024.2/data/layouts
+PlanAhead jar file: 	/data/apps/xilinx/Vivado/2024.2/lib/classes/planAhead.jar
+Vivado log file: 	/data2/home/cese4040-08/pdp-project-08/hardware/vivado.log
+Vivado journal file: 	/data2/home/cese4040-08/pdp-project-08/hardware/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-2993247-ce-procdesign01.ewi.tudelft.nl
+Non-Default Parameters:	[]
+
+Xilinx & AMD Environment Variables
+--------------------------------------------------------------------------------------------
+LMOD_FAMILY_XILINX: Vivado
+LMOD_FAMILY_XILINX_VERSION: 2024.2
+RDI_APPROOT: /opt/apps/xilinx/Vivado/2024.2
+RDI_BASEROOT: /opt/apps/xilinx/Vivado
+RDI_BINROOT: /opt/apps/xilinx/Vivado/2024.2/bin
+RDI_BUILD: yes
+RDI_DATADIR: /opt/apps/xilinx/SharedData/2024.2/data:/opt/apps/xilinx/Vivado/2024.2/data
+RDI_INSTALLROOT: /opt/apps/xilinx
+RDI_INSTALLVER: 2024.2
+RDI_JAVA_PLATFORM: 
+RDI_JAVA_VERSION: 21.0.1_12
+RDI_LIBDIR: /opt/apps/xilinx/Vivado/2024.2/lib/lnx64.o/Rhel/9:/opt/apps/xilinx/Vivado/2024.2/lib/lnx64.o/Rhel:/opt/apps/xilinx/Vivado/2024.2/lib/lnx64.o
+RDI_OPT_EXT: .o
+RDI_PATCHROOT: 
+RDI_PLATFORM: lnx64
+RDI_PREPEND_PATH: /opt/apps/xilinx/Vitis/2024.2/bin:/opt/apps/xilinx/Vivado/2024.2/ids_lite/ISE/bin/lin64
+RDI_PROG: /opt/apps/xilinx/Vivado/2024.2/bin/unwrapped/lnx64.o/vivado
+RDI_SESSION_INFO: /data2/home/cese4040-08/pdp-project-08/hardware:ce-procdesign01.ewi.tudelft.nl_1777559252_2993173
+RDI_SHARED_DATA: /opt/apps/xilinx/SharedData/2024.2/data
+RDI_TPS_ROOT: /opt/apps/xilinx/Vivado/2024.2/tps/lnx64
+RDI_USE_JDK21: True
+SHELL: /bin/bash
+XILINX: /opt/apps/xilinx/Vivado/2024.2/ids_lite/ISE
+XILINXD_LICENSE_FILE: /opt/apps/license/xilinx.lic
+XILINX_DSP: /opt/apps/xilinx/Vivado/2024.2/ids_lite/ISE
+XILINX_HLS: /opt/apps/xilinx/Vitis/2024.2
+XILINX_PLANAHEAD: /opt/apps/xilinx/Vivado/2024.2
+XILINX_SDK: /opt/apps/xilinx/Vitis/2024.2
+XILINX_VITIS: /opt/apps/xilinx/Vitis/2024.2
+XILINX_VIVADO: /opt/apps/xilinx/Vivado/2024.2
+
+
+GUI allocated memory:	512 MB
+GUI max memory:		4,072 MB
+Engine allocated memory: 1,523 MB
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ai (PAResourceItoN.MainMenuMgr_FILE, File)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // an (PAResourceItoN.MainMenuMgr_PROJECT, Project)
+selectMenuItem(PAResourceCommand.PACommandNames_OPEN_PROJECT, "Open..."); // aq (PAResourceCommand.PACommandNames_OPEN_PROJECT, open_project_menu)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ai (PAResourceItoN.MainMenuMgr_FILE, File)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_PROJECT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,583 MB. GUI used memory: 62 MB. Current time: 4/30/26, 4:27:59 PM CEST
+setFileChooser("/data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy/riscy.xpr");
+// [GUI Memory]: 73 MB (+74005kb) [00:00:24]
+// [Engine Memory]: 1,597 MB (+1522682kb) [00:00:24]
+// Opening Vivado Project: /data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy/riscy.xpr. Version: Vivado v2024.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 134 MB (+60102kb) [00:00:35]
+// [Engine Memory]: 2,159 MB (+505999kb) [00:00:37]
+// WARNING: HEventQueue.dispatchEvent() is taking  5588 ms.
+// Tcl Message: open_project /data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy/riscy.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/apps/xilinx/Vivado/2024.2/data/ip'. 
+// Tcl Message: INFO: [Project 1-5579] Found utility IPs instantiated in one or more block designs which have equivalent inline hdl with improved performance and reduced diskspace. It is recommended to migrate these utility IPs to inline hdl using the command upgrade_project -migrate_to_inline_hdl. The utility IPs may be deprecated in future releases. More information on inline hdl is available in UG994. 
+// [GUI Memory]: 146 MB (+6097kb) [00:00:40]
+// [GUI Memory]: 154 MB (+683kb) [00:00:40]
+// WARNING: HEventQueue.dispatchEvent() is taking  1171 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 3,001 MB. GUI used memory: 76 MB. Current time: 4/30/26, 4:28:22 PM CEST
+// Tcl Message: open_project: Time (s): cpu = 00:00:23 ; elapsed = 00:00:15 . Memory (MB): peak = 8326.246 ; gain = 620.699 ; free physical = 112622 ; free virtual = 120409 
+// Project name: riscy; location: /data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy; part: xc7z020clg400-1
+// Elapsed time: 18 seconds
+dismissDialog("Open Project"); // bh (Open Project Progress)
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 1006 ms. Increasing delay to 3018 ms.
+// Elapsed time: 13 seconds
+selectButton(PAResourceQtoS.StaleMoreAction_OUT_OF_DATE_DETAILS, "details"); // h (PAResourceQtoS.StaleMoreAction_OUT_OF_DATE_DETAILS)
+selectButton(RDIResource.HPopupTitle_CLOSE, (String) null); // k (RDIResource.HPopupTitle_CLOSE)
+// [Engine Memory]: 2,753 MB (+509858kb) [00:01:04]
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 361ms to process. Increasing delay to 2000 ms.
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 38s
+// Elapsed time: 21 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, IP Integrator, Open Block Design]", 7, false); // g (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_BLOCK_DESIGN
+// TclEventType: LOAD_FEATURE
+// TclEventType: RSB_SCRIPT_TASK
+// Tcl Message: open_bd_design {/data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy/riscy.srcs/sources_1/bd/riscv/riscv.bd} 
+// Tcl Message: Reading block design file </data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy/riscy.srcs/sources_1/bd/riscv/riscv.bd>... 
+// TclEventType: RSB_CHANGE_CURRENT_DIAGRAM
+// TclEventType: LOAD_FEATURE
+// TclEventType: RSB_PROPERTY_CHANGE
+// Tcl Message: Adding component instance block -- xilinx.com:module_ref:shift_addr:1.0 - shift_addr_0 Adding component instance block -- xilinx.com:ip:axi_bram_ctrl:4.1 - ps7_bram_instr_ctrl Adding component instance block -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0 Adding component instance block -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0 Adding component instance block -- xilinx.com:ip:xlconcat:2.1 - xlconcat_0 
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// Tcl Message: Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_100M Adding component instance block -- xilinx.com:ip:xlconstant:1.1 - xlconstant_1 Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.4 - instr_mem Adding component instance block -- xilinx.com:module_ref:shift_addr:1.0 - shift_addr_2 Adding component instance block -- xilinx.com:module_ref:shift_addr:1.0 - shift_addr_3 Adding component instance block -- xilinx.com:module_ref:riscv_top_bram:1.0 - riscv_top_bram_0 
+// TclEventType: COMPOSITE_FILE_CHANGE
+// Tcl Message: Adding component instance block -- xilinx.com:ip:xlconstant:1.1 - xlconstant_2 Adding component instance block -- xilinx.com:ip:xlconstant:1.1 - xlconstant_4 Adding component instance block -- xilinx.com:ip:xlconstant:1.1 - xlconstant_5 Adding component instance block -- xilinx.com:module_ref:reboot_riscv:1.0 - reboot_riscv_0 
+// TclEventType: COMPOSITE_FILE_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  1280 ms.
+// TclEventType: COMPOSITE_FILE_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,116 MB. GUI used memory: 76 MB. Current time: 4/30/26, 4:29:11 PM CEST
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 2394 ms. Increasing delay to 3000 ms.
+// TclEventType: COMPOSITE_FILE_CHANGE
+// Tcl Message: Adding component instance block -- xilinx.com:module_ref:axi_reg_bank:1.0 - axi_reg_bank_0 
+// TclEventType: COMPOSITE_FILE_CHANGE
+// [Engine Memory]: 3,124 MB (+244134kb) [00:01:31]
+// TclEventType: COMPOSITE_FILE_CHANGE
+// Tcl Message: Adding component instance block -- xilinx.com:module_ref:mem_snoop_match:1.0 - mem_snoop_match_0 
+// TclEventType: RSB_PROPERTY_CHANGE
+// Tcl Message: Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.4 - data_mem Adding component instance block -- xilinx.com:module_ref:shift_addr:1.0 - shift_addr_1 Adding component instance block -- xilinx.com:ip:axi_bram_ctrl:4.1 - ps7_bram_data_ctrl Adding component instance block -- xilinx.com:ip:smartconnect:1.0 - smartconnect_0 Adding component instance block -- xilinx.com:ip:util_reduced_logic:2.0 - util_reduced_logic_0 Successfully read diagram <riscv> from block design file </data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy/riscy.srcs/sources_1/bd/riscv/riscv.bd> 
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: RSB_CHANGE_CURRENT_DIAGRAM
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: RSB_CHANGE_CURRENT_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_OPEN_DIAGRAM
+// TclEventType: RSB_INSERT_ADDRNETWORK
+// TclEventType: RSB_OPEN_DIAGRAM
+// TclEventType: DG_GRAPH_STALE
+// WARNING: HEventQueue.dispatchEvent() is taking  7223 ms.
+// TclEventType: DG_GRAPH_STALE
+// Elapsed time: 25 seconds
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "unselect_objects"); // gh (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // x (PAResourceOtoP.PAViews_PROJECT_SUMMARY, PlanAheadTabProject Summary)
+// Tcl Message: open_bd_design: Time (s): cpu = 00:01:50 ; elapsed = 00:00:24 . Memory (MB): peak = 9289.984 ; gain = 328.434 ; free physical = 109103 ; free virtual = 118033 
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/U': 25s
+// 'bN' command handler elapsed time: 25 seconds
+// TclEventType: DG_GRAPH_STALE
+// WARNING: HTimer (Open addressing views timer) is taking 549ms to process. Increasing delay to 1300 ms.
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Open Block Design"); // bh (Open Block Design Progress)
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 01m:08s
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 01m:10s
+// Tcl Message: update_compile_order -fileset sources_1 
+selectMenu(PAResourceItoN.MainMenuMgr_FLOW, "Flow"); // ai (PAResourceItoN.MainMenuMgr_FLOW, Flow)
+selectMenu(PAResourceItoN.MainMenuMgr_SETTINGS, "Settings"); // an (PAResourceItoN.MainMenuMgr_SETTINGS, Settings)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_BLOCK_DESIGN, "Open Block Design"); // an (PAResourceItoN.MainMenuMgr_OPEN_BLOCK_DESIGN, Open Block Design)
+selectMenu(PAResourceCommand.PACommandNames_SIMULATION_RUN, "Run Simulation"); // ai (PAResourceCommand.PACommandNames_SIMULATION_RUN)
+selectMenuItem(PAResourceCommand.PACommandNames_RUN_SYNTHESIS, "Run Synthesis"); // aq (PAResourceCommand.PACommandNames_RUN_SYNTHESIS, run_synthesis_menu)
+dismissMenu(PAResourceItoN.MainMenuMgr_FLOW, "Flow"); // ai (PAResourceItoN.MainMenuMgr_FLOW, Flow)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run riscv_smartconnect_0_0_synth_1 
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+selectButton(RDIResource.BaseDialog_OK, "OK", "Launch Runs"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Launch Runs"); // g (dialog1)
+// Tcl Message: launch_runs synth_1 
+// Tcl Message: INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy/riscy.cache/ip/2024.2/6/5/6579fdf9ae74f841/riscv_smartconnect_0_0_sim_netlist.v to /data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy/riscy.gen/sources_1/bd/riscv/ip/riscv_smartconnect_0_0/riscv_smartconnect_0_0_sim_netlist.v. INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: /data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy/riscy.gen/sources_1/bd/riscv/ip/riscv_smartconnect_0_0/riscv_smartconnect_0_0_sim_netlist.v 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_DELETE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_DELETE
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Tcl Message: INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy/riscy.cache/ip/2024.2/6/5/6579fdf9ae74f841/riscv_smartconnect_0_0_sim_netlist.vhdl to /data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy/riscy.gen/sources_1/bd/riscv/ip/riscv_smartconnect_0_0/riscv_smartconnect_0_0_sim_netlist.vhdl. INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: /data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy/riscy.gen/sources_1/bd/riscv/ip/riscv_smartconnect_0_0/riscv_smartconnect_0_0_sim_netlist.vhdl INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP riscv_smartconnect_0_0, cache-ID = 6579fdf9ae74f841; cache size = 26.530 MB. 
+// Tcl Message: config_ip_cache: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 9289.984 ; gain = 0.000 ; free physical = 108503 ; free virtual = 116008 
+// TclEventType: PROJ_DESIGN_MODE_SET
+// WARNING: HEventQueue.dispatchEvent() is taking  1658 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 3,668 MB. GUI used memory: 88 MB. Current time: 4/30/26, 4:29:50 PM CEST
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: [Thu Apr 30 16:29:51 2026] Launched synth_1... Run output will be captured here: /data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy/riscy.runs/synth_1/runme.log 
+// Tcl Message: launch_runs: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 9714.277 ; gain = 424.293 ; free physical = 108514 ; free virtual = 115794 
+// 'i' command handler elapsed time: 13 seconds
+dismissDialog("Starting Design Runs"); // bh (Starting Design Runs Progress)
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 01m:32s
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 01m:34s
+// TclEventType: RUN_STATUS_CHANGE
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 1474 ms. Increasing delay to 3000 ms.
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 109 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK", "Synthesis Completed"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+selectButton(RDIResource.BaseDialog_OK, "OK", "Launch Runs"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Launch Runs"); // g (dialog3)
+// Tcl Message: launch_runs impl_1 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: [Thu Apr 30 16:31:45 2026] Launched impl_1... Run output will be captured here: /data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy/riscy.runs/impl_1/runme.log 
+// 'a' command handler elapsed time: 4 seconds
+dismissDialog("Starting Design Runs"); // bh (Starting Design Runs Progress)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// [GUI Memory]: 165 MB (+2583kb) [00:08:08]
+// Elapsed time: 523 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "Generate Bitstream"); // a (PAResourceCommand.PACommandNames_RUN_BITGEN)
+selectButton(RDIResource.BaseDialog_OK, "OK", "Implementation Completed"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+selectButton(RDIResource.BaseDialog_OK, "OK", "Launch Runs"); // a (RDIResource.BaseDialog_OK)
+// [GUI Memory]: 175 MB (+2606kb) [00:12:52]
+dismissDialog("Launch Runs"); // cP (dialog5)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream 
+// Tcl Message: [Thu Apr 30 16:40:34 2026] Launched impl_1... Run output will be captured here: /data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy/riscy.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bh (Generate Bitstream Progress)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 118 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK", "Bitstream Generation Completed"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_GOTO_IMPLEMENTED_DESIGN
+// Tcl Message: open_run impl_1 
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: POWER_CNS_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 3,649 MB. GUI used memory: 95 MB. Current time: 4/30/26, 4:43:00 PM CEST
+// [Engine Memory]: 3,649 MB (+387373kb) [00:15:19]
+// Xgd.load filename: /data2/home/cese4040-08/pdp-project-08/hardware/./.Xil/Vivado-2993247-ce-procdesign01.ewi.tudelft.nl/xc7z020_detail.xgd_497BA4A1 elapsed time: 2.2s
+// DeviceModel: Load Xgds SwingWorker Join Forever elapsed time: 2.6s
+// TclEventType: DESIGN_NEW
+// [Engine Memory]: 4,034 MB (+211740kb) [00:15:24]
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// RouteApi::loadEngineXgdAndInitRouteStorage elapsed time: 2.9s
+// DeviceView Instantiated
+// WARNING: HEventQueue.dispatchEvent() is taking  6282 ms.
+// Tcl Message: INFO: [Device 21-403] Loading part xc7z020clg400-1 
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.57 ; elapsed = 00:00:00.61 . Memory (MB): peak = 9714.277 ; gain = 0.000 ; free physical = 112262 ; free virtual = 119411 
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 638 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2024.2 INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message: Read ShapeDB Complete: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.07 . Memory (MB): peak = 9714.277 ; gain = 0.000 ; free physical = 112141 ; free virtual = 119296 
+// Tcl Message: INFO: [Timing 38-478] Restoring timing data from binary archive. INFO: [Timing 38-479] Binary timing data restore complete. INFO: [Project 1-856] Restoring constraints from binary archive. INFO: [Project 1-853] Binary constraint restore complete. INFO: [Designutils 20-5722] Start Reading Physical Databases. 
+// Tcl Message: Reading placement. 
+// Tcl Message: Read Netlist Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 9714.277 ; gain = 0.000 ; free physical = 111528 ; free virtual = 118705 
+// Tcl Message: Reading placer database... 
+// Tcl Message: Read Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 9714.277 ; gain = 0.000 ; free physical = 111528 ; free virtual = 118706 Read PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.94 . Memory (MB): peak = 9735.387 ; gain = 21.109 ; free physical = 111508 ; free virtual = 118687 Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 9735.387 ; gain = 0.000 ; free physical = 111509 ; free virtual = 118687 
+// Tcl Message: Reading routing. 
+// Tcl Message: Read RouteStorage: Time (s): cpu = 00:00:00.93 ; elapsed = 00:00:00.3 . Memory (MB): peak = 9745.387 ; gain = 10.000 ; free physical = 111500 ; free virtual = 118679 Read Physdb Files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 9745.387 ; gain = 31.109 ; free physical = 111500 ; free virtual = 118678 
+// Tcl Message: Restored from archive | CPU: 2.360000 secs | Memory: 43.467628 MB | 
+// Tcl Message: Finished XDEF File Restore: Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 9745.387 ; gain = 31.109 ; free physical = 111500 ; free virtual = 118678 Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 9745.387 ; gain = 0.000 ; free physical = 111497 ; free virtual = 118677 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary:   A total of 134 instances were transformed.   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 129 instances   RAM32X1D => RAM32X1D (RAMD32(x2)): 5 instances  
+// TclEventType: CURR_DESIGN_SET
+// Device view-level: 0.0
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// ExpRunCommands.openImplResults elapsed time: 37.7s
+// TclEventType: DRC_ADDED
+// Tcl Message: open_run: Time (s): cpu = 00:00:50 ; elapsed = 00:00:37 . Memory (MB): peak = 10587.230 ; gain = 872.953 ; free physical = 111066 ; free virtual = 118299 
+// TclEventType: DRC_ADDED
+// TclEventType: METHODOLOGY_ADDED
+// [GUI Memory]: 198 MB (+14920kb) [00:15:31]
+// TclEventType: POWER_UPDATED
+// [GUI Memory]: 214 MB (+6094kb) [00:15:37]
+// [GUI Memory]: 226 MB (+783kb) [00:15:38]
+// [GUI Memory]: 238 MB (+751kb) [00:15:38]
+// WARNING: HEventQueue.dispatchEvent() is taking  6324 ms.
+// TclEventType: TIMING_SUMMARY_UPDATED
+// HMemoryUtils.trashcanNow. Engine heap size: 4,149 MB. GUI used memory: 152 MB. Current time: 4/30/26, 4:43:20 PM CEST
+// TclEventType: TIMING_SUMMARY_UPDATED
+// WARNING: HEventQueue.dispatchEvent() is taking  1022 ms.
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/q.a': 48s
+// [Engine Memory]: 4,596 MB (+378039kb) [00:15:41]
+// 'dV' command handler elapsed time: 49 seconds
+// WARNING: HEventQueue.dispatchEvent() is taking  1646 ms.
+// Elapsed time: 50 seconds
+dismissDialog("Open Implemented Design"); // bh (Open Implemented Design Progress)
+// WARNING: HEventQueue.dispatchEvent() is taking  2140 ms.
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 4757ms to process. Increasing delay to 2000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  4953 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 4227 ms. Increasing delay to 12681 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 5941 ms. Increasing delay to 4000 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 509 ms to process. Increasing delay to 2000 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 1129 ms. Decreasing delay to 3129 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 11557 ms. Increasing delay to 5000 ms.
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 431ms to process. Increasing delay to 3000 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 7065 ms. Increasing delay to 6000 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 6145 ms. Increasing delay to 7000 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 11491 ms. Increasing delay to 8000 ms.
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 1846ms to process. Increasing delay to 4000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2072 ms.
+// WARNING: HTimer (a Update Status Timer) is taking 514ms to process. Increasing delay to 3000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1846 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 16493 ms. Increasing delay to 49479 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1187 ms.
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 2841ms to process. Increasing delay to 5000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3104 ms.
+// WARNING: HTimer (a Update Status Timer) is taking 911ms to process. Increasing delay to 4000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1815 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2495 ms.
+// WARNING: HTimer (FileMgr Design Graph Update Timer) is taking 911ms to process. Increasing delay to 3000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1517 ms.
+// WARNING: HTimer (a Update Status Timer) is taking 600ms to process. Increasing delay to 3000 ms.
+// WARNING: HTimer (StateMonitor Timer) is taking 640ms to process. Increasing delay to 4000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1395 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1177 ms.
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 9397ms to process. Increasing delay to 6000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  10592 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  4596 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  4155 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 1283 ms to process. Increasing delay to 3000 ms.
+// WARNING: HTimer (a Update Status Timer) is taking 10703ms to process. Increasing delay to 5000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  30651 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 90745 ms. Increasing delay to 9000 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 36027 ms. Increasing delay to 108081 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 353 ms. Decreasing delay to 2353 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 3596 ms. Increasing delay to 10788 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 30320 ms. Increasing delay to 10000 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 29753 ms. Increasing delay to 89259 ms.
+// WARNING: HTimer (StateMonitor Timer) is taking 1017ms to process. Increasing delay to 5000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1097 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1161 ms.
+// WARNING: HTimer (FileMgr Design Graph Update Timer) is taking 759ms to process. Increasing delay to 4000 ms.
+// WARNING: HTimer (ExpRunMgr Pending Runs Timer) is taking 607ms to process. Increasing delay to 3000 ms.
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 1275ms to process. Increasing delay to 7000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1548 ms.
