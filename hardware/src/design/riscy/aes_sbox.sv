@@ -70,6 +70,7 @@ module aes_sbox (
             8'hf4: out_o = 8'hbf; 8'hf5: out_o = 8'he6; 8'hf6: out_o = 8'h42; 8'hf7: out_o = 8'h68;
             8'hf8: out_o = 8'h41; 8'hf9: out_o = 8'h99; 8'hfa: out_o = 8'h2d; 8'hfb: out_o = 8'h0f;
             8'hfc: out_o = 8'hb0; 8'hfd: out_o = 8'h54; 8'hfe: out_o = 8'hbb; 8'hff: out_o = 8'h16;
+            default: out_o = 8'h00;
         endcase
     end
 endmodule

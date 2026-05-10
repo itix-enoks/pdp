@@ -21,6 +21,7 @@ module riscv_aes_unit (
             2'b01: si = rs2_i[15:8];
             2'b10: si = rs2_i[23:16];
             2'b11: si = rs2_i[31:24];
+            default: si = 8'h00;
         endcase
     end
 
@@ -42,6 +43,7 @@ module riscv_aes_unit (
             2'b01: rot_out = {rot_in[23:0],  rot_in[31:24]};
             2'b10: rot_out = {rot_in[15:0],  rot_in[31:16]};
             2'b11: rot_out = {rot_in[7:0],   rot_in[31:8]};
+            default: rot_out = 32'h0;
         endcase
     end
 
