@@ -1,0 +1,804 @@
+/*
+
+AMD Vivado v2024.2 (64-bit) [Major: 2024, Minor: 2]
+SW Build: 5239630 on Fri Nov 08 22:34:34 MST 2024
+IP Build: 5239520 on Sun Nov 10 16:12:51 MST 2024
+IP Build: 5239520 on Sun Nov 10 16:12:51 MST 2024
+
+Process ID (PID): 1035774
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Mon Apr 27 16:20:20 CEST 2026
+Time zone: 	Central European Standard Time (Europe/Amsterdam)
+
+OS: Red Hat Enterprise Linux release 9.7 (Plow)
+OS Version: 5.14.0-570.49.1.el9_6.x86_64
+OS Architecture: amd64
+Available processors (cores): 64
+LSB Release Description: Red Hat Enterprise Linux release 9.7 (Plow)
+
+Display: 56
+Screen size: 1600x900
+Local screen bounds: x = 0, y = 30, width = 1600, height = 846
+Screen resolution (DPI): 132
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=16
+Scale size: 21
+OS font scaling: 132%
+Anti-Alias Enabled: false
+
+Java version: 	21.0.1 64-bit
+
+Java home: 	/data/apps/xilinx/Vivado/2024.2/tps/lnx64/jre21.0.1_12
+Java executable: 	/data/apps/xilinx/Vivado/2024.2/tps/lnx64/jre21.0.1_12/bin/java
+Java arguments: 	[-Dsun.java2d.pmoffscreen=false, -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2, -Dsun.java2d.xrender=false, -Dsun.java2d.uiScale.enabled=false, -Dswing.aatext=true, -XX:-UsePerfData, -Djdk.map.althashing.threshold=512, -XX:StringTableSize=4072, -XX:+UseStringDeduplication, -XX:MaxGCPauseMillis=200, -XX:ParallelGCThreads=4, -XX:+ParallelRefProcEnabled, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.desktop/sun.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/java.awt.event=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.base/java.nio=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.table=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.desktop/sun.awt.shell=ALL-UNNAMED, --add-exports=java.base/sun.security.action=ALL-UNNAMED, --add-exports=java.desktop/sun.font=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, -XX:NewSize=80m, -XX:MaxNewSize=80m, -Xms512m, -Xmx4072m, -Xss10m, -Xrs]
+Java initial memory (-Xms): 	512 MB
+Java maximum memory (-Xmx):	 3 GB
+
+User name: 	cese4040-08
+User home directory: /data2/home/cese4040-08
+User working directory: /data2/home/cese4040-08/pdp-project-08/hardware
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /data/apps/xilinx/Vivado
+HDI_APPROOT: /opt/apps/xilinx/Vivado/2024.2
+RDI_DATADIR: /data/apps/xilinx/SharedData/2024.2/data:/opt/apps/xilinx/Vivado/2024.2/data
+RDI_BINDIR: /data/apps/xilinx/Vivado/2024.2/bin
+
+Vivado preferences file: /data/home/cese4040-08/.Xilinx/Vivado/2024.2/vivado.xml
+Vivado preferences directory: /data/home/cese4040-08/.Xilinx/Vivado/2024.2/
+Vivado layouts directory: /data2/home/cese4040-08/.Xilinx/Vivado/2024.2/data/layouts
+PlanAhead jar file: 	/data/apps/xilinx/Vivado/2024.2/lib/classes/planAhead.jar
+Vivado log file: 	/data2/home/cese4040-08/pdp-project-08/hardware/vivado.log
+Vivado journal file: 	/data2/home/cese4040-08/pdp-project-08/hardware/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-1035774-ce-procdesign01.ewi.tudelft.nl
+Non-Default Parameters:	[]
+
+Xilinx & AMD Environment Variables
+--------------------------------------------------------------------------------------------
+LMOD_FAMILY_XILINX: Vivado
+LMOD_FAMILY_XILINX_VERSION: 2024.2
+RDI_APPROOT: /opt/apps/xilinx/Vivado/2024.2
+RDI_BASEROOT: /opt/apps/xilinx/Vivado
+RDI_BINROOT: /opt/apps/xilinx/Vivado/2024.2/bin
+RDI_BUILD: yes
+RDI_DATADIR: /opt/apps/xilinx/SharedData/2024.2/data:/opt/apps/xilinx/Vivado/2024.2/data
+RDI_INSTALLROOT: /opt/apps/xilinx
+RDI_INSTALLVER: 2024.2
+RDI_JAVA_PLATFORM: 
+RDI_JAVA_VERSION: 21.0.1_12
+RDI_LIBDIR: /opt/apps/xilinx/Vivado/2024.2/lib/lnx64.o/Rhel/9:/opt/apps/xilinx/Vivado/2024.2/lib/lnx64.o/Rhel:/opt/apps/xilinx/Vivado/2024.2/lib/lnx64.o
+RDI_OPT_EXT: .o
+RDI_PATCHROOT: 
+RDI_PLATFORM: lnx64
+RDI_PREPEND_PATH: /opt/apps/xilinx/Vitis/2024.2/bin:/opt/apps/xilinx/Vivado/2024.2/ids_lite/ISE/bin/lin64
+RDI_PROG: /opt/apps/xilinx/Vivado/2024.2/bin/unwrapped/lnx64.o/vivado
+RDI_SESSION_INFO: /data/home/cese4040-08/pdp-project-08/hardware:ce-procdesign01.ewi.tudelft.nl_1777299595_1035703
+RDI_SHARED_DATA: /opt/apps/xilinx/SharedData/2024.2/data
+RDI_TPS_ROOT: /opt/apps/xilinx/Vivado/2024.2/tps/lnx64
+RDI_USE_JDK21: True
+SHELL: /bin/bash
+XILINX: /opt/apps/xilinx/Vivado/2024.2/ids_lite/ISE
+XILINXD_LICENSE_FILE: /opt/apps/license/xilinx.lic
+XILINX_DSP: /opt/apps/xilinx/Vivado/2024.2/ids_lite/ISE
+XILINX_HLS: /opt/apps/xilinx/Vitis/2024.2
+XILINX_PLANAHEAD: /opt/apps/xilinx/Vivado/2024.2
+XILINX_SDK: /opt/apps/xilinx/Vitis/2024.2
+XILINX_VITIS: /opt/apps/xilinx/Vitis/2024.2
+XILINX_VIVADO: /opt/apps/xilinx/Vivado/2024.2
+
+
+GUI allocated memory:	512 MB
+GUI max memory:		4,072 MB
+Engine allocated memory: 1,493 MB
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,525 MB. GUI used memory: 66 MB. Current time: 4/27/26, 4:20:21 PM CEST
+// Tcl (Dont Echo) Command: 'rdi::info_commands {sour*}'
+// Tcl (Dont Echo) Command: 'rdi::info_commands {source*}'
+// Tcl (Dont Echo) Command: 'rdi::info_commands bd::match_path'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source ./scripts/gen_bitstream.tcl", true); // h.b (RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE)
+// Tcl Command: 'source ./scripts/gen_bitstream.tcl'
+// Tcl Message: source ./scripts/gen_bitstream.tcl 
+// Tcl Message: # source ./scripts/create_project.tcl ## create_project riscy ./vivado/riscy -part xc7z020clg400-1 -force 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 139 MB (+143322kb) [00:00:30]
+// [Engine Memory]: 1,610 MB (+1537227kb) [00:00:30]
+// [Engine Memory]: 1,738 MB (+49682kb) [00:00:33]
+// WARNING: HEventQueue.dispatchEvent() is taking  3844 ms.
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/apps/xilinx/Vivado/2024.2/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,781 MB. GUI used memory: 73 MB. Current time: 4/27/26, 4:20:38 PM CEST
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: create_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:11 . Memory (MB): peak = 7923.941 ; gain = 242.848 ; free physical = 104017 ; free virtual = 119069 
+// Tcl Message: ## add_files -norecurse ./src/design/riscy/ ## add_files -norecurse ./src/design/riscy/include/ ## add_files -norecurse ./src/design/zynq_system/ ## add_files -norecurse ./src/simulation/ ## update_compile_order -fileset sources_1 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: LOAD_FEATURE
+// Tcl Message: INFO: [BD::TCL 103-2003] Currently there is no design <riscv> in project, so creating one... 
+// TclEventType: RSB_CHANGE_CURRENT_DIAGRAM
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: RSB_OPEN_DIAGRAM
+// WARNING: HEventQueue.dispatchEvent() is taking  1046 ms.
+// Tcl Message: Wrote  : </data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy/riscy.srcs/sources_1/bd/riscv/riscv.bd>  
+// Elapsed time: 16 seconds
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // x (PAResourceOtoP.PAViews_PROJECT_SUMMARY, PlanAheadTabProject Summary)
+// Tcl Message: INFO: [BD::TCL 103-2004] Making design <riscv> as current_bd_design. 
+// Tcl Message: ### common::send_gid_msg -ssname BD::TCL -id 2005 -severity "INFO" "Currently the variable <design_name> is equal to \"$design_name\"." 
+// Tcl Message: INFO: [BD::TCL 103-2005] Currently the variable <design_name> is equal to "riscv". 
+// Tcl Message: INFO: [BD::TCL 103-2011] Checking if the following IPs exist in the project's IP catalog:   xilinx.com:ip:axi_bram_ctrl:4.1 xilinx.com:ip:processing_system7:5.5 xilinx.com:ip:proc_sys_reset:5.0 xilinx.com:ip:xlconstant:1.1 xilinx.com:ip:ahblite_axi_bridge:3.0 xilinx.com:ip:blk_mem_gen:8.4 xilinx.com:ip:smartconnect:1.0  . 
+// Tcl Message: INFO: [BD::TCL 103-2020] Checking if the following modules exist in the project's sources:   shift_addr shift_addr shift_addr riscv_top_bram reboot_riscv shift_addr  . 
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: LOAD_FEATURE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// Tcl Message: INFO: [BD 5-1043] It is recommended to use inline hdl version xilinx.com:inline_hdl:ilconstant:1.0 for the IP type xilinx.com:ip:xlconstant:1.1 for improved performance and reduced disk space. IPs with VLNV xilinx.com:ip:xlconstant:1.1 may be deprecated in future releases. More information on inline hdl IP is available in UG994  INFO: [BD 5-1043] It is recommended to use inline hdl version xilinx.com:inline_hdl:ilconcat:1.0 for the IP type xilinx.com:ip:xlconcat:2.1 for improved performance and reduced disk space. IPs with VLNV xilinx.com:ip:xlconcat:2.1 may be deprecated in future releases. More information on inline hdl IP is available in UG994  
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// Tcl Message: INFO: [BD 5-1043] It is recommended to use inline hdl version xilinx.com:inline_hdl:ilconstant:1.0 for the IP type xilinx.com:ip:xlconstant:1.1 for improved performance and reduced disk space. IPs with VLNV xilinx.com:ip:xlconstant:1.1 may be deprecated in future releases. More information on inline hdl IP is available in UG994  
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// [Engine Memory]: 1,864 MB (+40620kb) [00:00:53]
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,876 MB. GUI used memory: 74 MB. Current time: 4/27/26, 4:20:56 PM CEST
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// Tcl Message: INFO: [IP_Flow 19-3484] Absolute path of file '/data2/home/cese4040-08/pdp-project-08/hardware/src/sw/mem_files/code.coe' provided. It will be converted relative to IP Instance files '../../../../../../../../src/sw/mem_files/code.coe' 
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: BDCELL_LOCK_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: BDCELL_LOCK_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: BDCELL_LOCK_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: BDCELL_LOCK_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-5107] Inferred bus interface 'RSTN' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository). INFO: [IP_Flow 19-5107] Inferred bus interface 'ACLK' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository). INFO: [IP_Flow 19-4728] Bus Interface 'RSTN': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'. INFO: [IP_Flow 19-4728] Bus Interface 'ACLK': Added interface parameter 'ASSOCIATED_RESET' with value 'RSTN'. 
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_CHANGE_CURRENT_DIAGRAM
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: RSB_CLOSE_DIAGRAM
+// TclEventType: RSB_CHANGE_CURRENT_DIAGRAM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,889 MB. GUI used memory: 75 MB. Current time: 4/27/26, 4:21:00 PM CEST
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_CONNECTION_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_VALIDATE_DIAGRAM
+// TclEventType: MSGMGR_REFRESH_MSG
+// TclEventType: RSB_PARAM_PROP
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// Tcl Message: INFO: [BD 5-1043] It is recommended to use inline hdl version xilinx.com:inline_hdl:ilreduced_logic:1.0 for the IP type xilinx.com:ip:util_reduced_logic:2.0 for improved performance and reduced disk space. IPs with VLNV xilinx.com:ip:util_reduced_logic:2.0 may be deprecated in future releases. More information on inline hdl IP is available in UG994  
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_CLOSE_DIAGRAM
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_PARAM_PROP
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// [GUI Memory]: 150 MB (+3728kb) [00:01:02]
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: Wrote  : </data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy/riscy.srcs/sources_1/bd/riscv/riscv.bd>  Wrote  : </data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy/riscy.srcs/sources_1/bd/riscv/ui/bd_32edb0cf.ui>  
+// Tcl Message: save_bd_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 8079.758 ; gain = 14.977 ; free physical = 102822 ; free virtual = 117905 
+// Tcl Message: ## set_property top riscv_wrapper [current_fileset] ## update_compile_order -fileset sources_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,100 MB. GUI used memory: 75 MB. Current time: 4/27/26, 4:21:16 PM CEST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: update_compile_order: Time (s): cpu = 00:00:23 ; elapsed = 00:00:07 . Memory (MB): peak = 8255.844 ; gain = 176.086 ; free physical = 102677 ; free virtual = 117760 
+// Tcl Message: ## set_property top zynq_tb [get_filesets sim_1] # source ./scripts/run_synth_impl.tcl ## update_compile_order -fileset sources_1 
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_SAVE_DIAGRAM
+// Tcl Message: ## launch_runs impl_1 -to_step write_bitstream -jobs 1 
+// Tcl Message: INFO: [BD 41-1662] The design 'riscv.bd' is already validated. Therefore parameter propagation will not be re-run. 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: COMPOSITE_FILE_CHANGE
+// [Engine Memory]: 1,970 MB (+13776kb) [00:01:20]
+// Tcl Message: Verilog Output written to : /data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy/riscy.gen/sources_1/bd/riscv/synth/riscv.v 
+// Tcl Message: Verilog Output written to : /data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy/riscy.gen/sources_1/bd/riscv/sim/riscv.v Verilog Output written to : /data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy/riscy.gen/sources_1/bd/riscv/hdl/riscv_wrapper.v 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block shift_addr_0 . INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_bram_instr_ctrl . 
+// Tcl Message: INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI_GP0'. A default connection has been created. 
+// TclEventType: COMPOSITE_FILE_CHANGE
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 . INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 . INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 . INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M . INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_1 . 
+// TclEventType: COMPOSITE_FILE_CHANGE
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block data_mem . INFO: [BD 41-1029] Generation completed for the IP Integrator block shift_addr_1 . INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_bram_data_ctrl . 
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// Tcl Message: Exporting to file /data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy/riscy.gen/sources_1/bd/riscv/ip/riscv_smartconnect_0_0/bd_0/hw_handoff/riscv_smartconnect_0_0.hwh Generated Hardware Definition File /data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy/riscy.gen/sources_1/bd/riscv/ip/riscv_smartconnect_0_0/bd_0/synth/riscv_smartconnect_0_0.hwdef 
+// TclEventType: RUN_ADD
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block smartconnect_0 . INFO: [BD 41-1029] Generation completed for the IP Integrator block util_reduced_logic_0 . 
+// Tcl Message: Exporting to file /data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy/riscy.gen/sources_1/bd/riscv/hw_handoff/riscv.hwh Generated Hardware Definition File /data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy/riscy.gen/sources_1/bd/riscv/synth/riscv.hwdef 
+// TclEventType: RUN_ADD
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// [Engine Memory]: 2,099 MB (+31710kb) [00:01:56]
+// TclEventType: RUN_ADD
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 2,222 MB (+18253kb) [00:01:56]
+// TclEventType: RUN_ADD
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// [Engine Memory]: 2,504 MB (+179362kb) [00:01:57]
+// HMemoryUtils.trashcanNow. Engine heap size: 2,514 MB. GUI used memory: 79 MB. Current time: 4/27/26, 4:22:01 PM CEST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs: Time (s): cpu = 00:01:23 ; elapsed = 00:00:59 . Memory (MB): peak = 8937.738 ; gain = 672.922 ; free physical = 102408 ; free virtual = 117546 
+// Tcl Message: ## wait_on_run -timeout 30 impl_1 
+// Tcl Message: [Mon Apr 27 16:22:21 2026] Waiting for impl_1 to finish (timeout in 30 minutes)... 
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: [Mon Apr 27 16:22:26 2026] Waiting for impl_1 to finish (timeout in 30 minutes)... 
+// Tcl Message: [Mon Apr 27 16:22:31 2026] Waiting for impl_1 to finish (timeout in 30 minutes)... 
+// Tcl Message: [Mon Apr 27 16:22:36 2026] Waiting for impl_1 to finish (timeout in 30 minutes)... 
+// Tcl Message: [Mon Apr 27 16:22:47 2026] Waiting for impl_1 to finish (timeout in 30 minutes)... 
+// Tcl Message: [Mon Apr 27 16:22:57 2026] Waiting for impl_1 to finish (timeout in 29 minutes)... 
+// Tcl Message: [Mon Apr 27 16:23:07 2026] Waiting for impl_1 to finish (timeout in 29 minutes)... 
+// Tcl Message: [Mon Apr 27 16:23:17 2026] Waiting for impl_1 to finish (timeout in 29 minutes)... 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,339 MB. GUI used memory: 79 MB. Current time: 4/27/26, 4:23:30 PM CEST
+// Tcl Message: [Mon Apr 27 16:23:37 2026] Waiting for impl_1 to finish (timeout in 29 minutes)... 
+// Tcl Message: [Mon Apr 27 16:23:58 2026] Waiting for impl_1 to finish (timeout in 28 minutes)... 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,339 MB. GUI used memory: 79 MB. Current time: 4/27/26, 4:24:00 PM CEST
+// Tcl Message: [Mon Apr 27 16:24:18 2026] Waiting for impl_1 to finish (timeout in 28 minutes)... 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,339 MB. GUI used memory: 79 MB. Current time: 4/27/26, 4:24:30 PM CEST
+// Tcl Message: [Mon Apr 27 16:24:38 2026] Waiting for impl_1 to finish (timeout in 28 minutes)... 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,339 MB. GUI used memory: 79 MB. Current time: 4/27/26, 4:25:00 PM CEST
+// Tcl Message: [Mon Apr 27 16:25:19 2026] Waiting for impl_1 to finish (timeout in 27 minutes)... 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,339 MB. GUI used memory: 79 MB. Current time: 4/27/26, 4:25:30 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,339 MB. GUI used memory: 79 MB. Current time: 4/27/26, 4:26:00 PM CEST
+// Tcl Message: [Mon Apr 27 16:25:59 2026] Waiting for impl_1 to finish (timeout in 26 minutes)... 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,339 MB. GUI used memory: 79 MB. Current time: 4/27/26, 4:26:30 PM CEST
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  1098 ms.
+// Tcl Message: [Mon Apr 27 16:26:40 2026] Waiting for impl_1 to finish (timeout in 26 minutes)... 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,418 MB. GUI used memory: 80 MB. Current time: 4/27/26, 4:27:00 PM CEST
+// Tcl Message: [Mon Apr 27 16:27:20 2026] Waiting for impl_1 to finish (timeout in 25 minutes)... 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,418 MB. GUI used memory: 79 MB. Current time: 4/27/26, 4:27:30 PM CEST
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,419 MB. GUI used memory: 80 MB. Current time: 4/27/26, 4:28:00 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,419 MB. GUI used memory: 80 MB. Current time: 4/27/26, 4:28:30 PM CEST
+// Tcl Message: [Mon Apr 27 16:28:42 2026] Waiting for impl_1 to finish (timeout in 24 minutes)... 
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 81 MB. Current time: 4/27/26, 4:29:00 PM CEST
+// WARNING: HEventQueue.dispatchEvent() is taking  2572 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 80 MB. Current time: 4/27/26, 4:29:30 PM CEST
+// WARNING: HEventQueue.dispatchEvent() is taking  1389 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 80 MB. Current time: 4/27/26, 4:30:00 PM CEST
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: [Mon Apr 27 16:30:03 2026] Waiting for impl_1 to finish (timeout in 22 minutes)... 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 80 MB. Current time: 4/27/26, 4:30:30 PM CEST
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 80 MB. Current time: 4/27/26, 4:31:00 PM CEST
+// Tcl Message: [Mon Apr 27 16:31:24 2026] Waiting for impl_1 to finish (timeout in 21 minutes)... 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 80 MB. Current time: 4/27/26, 4:31:30 PM CEST
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 1377 ms. Increasing delay to 3000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1131 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 80 MB. Current time: 4/27/26, 4:32:01 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 80 MB. Current time: 4/27/26, 4:32:30 PM CEST
+// Tcl Message: [Mon Apr 27 16:32:46 2026] Waiting for impl_1 to finish (timeout in 20 minutes)... 
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 81 MB. Current time: 4/27/26, 4:33:00 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 81 MB. Current time: 4/27/26, 4:33:30 PM CEST
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 81 MB. Current time: 4/27/26, 4:34:00 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 81 MB. Current time: 4/27/26, 4:34:30 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 81 MB. Current time: 4/27/26, 4:35:00 PM CEST
+// Tcl Message: [Mon Apr 27 16:35:29 2026] Waiting for impl_1 to finish (timeout in 17 minutes)... 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 81 MB. Current time: 4/27/26, 4:35:30 PM CEST
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// [GUI Memory]: 159 MB (+1813kb) [00:17:07]
+// Tcl Message: [Mon Apr 27 16:38:12 2026] Waiting for impl_1 to finish (timeout in 14 minutes)... 
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  1117 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 82 MB. Current time: 4/27/26, 4:40:00 PM CEST
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 82 MB. Current time: 4/27/26, 4:40:30 PM CEST
+// Tcl Message: [Mon Apr 27 16:40:54 2026] Waiting for impl_1 to finish (timeout in 11 minutes)... 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 82 MB. Current time: 4/27/26, 4:41:00 PM CEST
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 82 MB. Current time: 4/27/26, 4:41:30 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 82 MB. Current time: 4/27/26, 4:42:00 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 82 MB. Current time: 4/27/26, 4:42:30 PM CEST
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 83 MB. Current time: 4/27/26, 4:43:00 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 82 MB. Current time: 4/27/26, 4:43:30 PM CEST
+// Tcl Message: [Mon Apr 27 16:43:36 2026] Waiting for impl_1 to finish (timeout in 9 minutes)... 
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 83 MB. Current time: 4/27/26, 4:44:00 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 83 MB. Current time: 4/27/26, 4:44:30 PM CEST
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 83 MB. Current time: 4/27/26, 4:45:00 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 83 MB. Current time: 4/27/26, 4:45:30 PM CEST
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 83 MB. Current time: 4/27/26, 4:46:00 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 84 MB. Current time: 4/27/26, 4:46:30 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 84 MB. Current time: 4/27/26, 4:47:00 PM CEST
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 84 MB. Current time: 4/27/26, 4:47:30 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 83 MB. Current time: 4/27/26, 4:48:00 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 84 MB. Current time: 4/27/26, 4:48:30 PM CEST
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 84 MB. Current time: 4/27/26, 4:49:00 PM CEST
+// Tcl Message: [Mon Apr 27 16:49:00 2026] Waiting for impl_1 to finish (timeout in 3 minutes)... 
+// TclEventType: RUN_STEP_COMPLETED
+// HMemoryUtils.trashcanNow. Engine heap size: 2,421 MB. GUI used memory: 85 MB. Current time: 4/27/26, 4:49:30 PM CEST
+// TclEventType: RUN_STEP_COMPLETED
+// HMemoryUtils.trashcanNow. Engine heap size: 2,422 MB. GUI used memory: 84 MB. Current time: 4/27/26, 4:50:00 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,422 MB. GUI used memory: 84 MB. Current time: 4/27/26, 4:50:30 PM CEST
+// TclEventType: RUN_STEP_COMPLETED
+// HMemoryUtils.trashcanNow. Engine heap size: 2,422 MB. GUI used memory: 84 MB. Current time: 4/27/26, 4:51:00 PM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,422 MB. GUI used memory: 85 MB. Current time: 4/27/26, 4:51:30 PM CEST
+// Tcl Message: [Mon Apr 27 16:52:24 2026] impl_1 timed out after 30 minutes. 
+// Tcl Message: wait_on_runs: Time (s): cpu = 00:01:20 ; elapsed = 00:30:03 . Memory (MB): peak = 8937.738 ; gain = 0.000 ; free physical = 100544 ; free virtual = 115067 
+// Elapsed Time for: 'b.c': 31m:54s
+// TclEventType: DG_GRAPH_STALE
+// WARNING: HTimer (Open addressing views timer) is taking 2176ms to process. Increasing delay to 1300 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2178 ms.
+// Elapsed time: 1897 seconds
+dismissDialog("Tcl Command"); // bh (Tcl Command Progress)
+// WARNING: HTimer (FileMgr Design Graph Update Timer) is taking 1294ms to process. Increasing delay to 3000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1294 ms.
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 4834 ms. Increasing delay to 14502 ms.
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 31m:55s
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 239ms to process. Increasing delay to 2000 ms.
+// WARNING: HTimer (ExpRunMonitor Update Timer) is taking 601ms to process. Increasing delay to 3000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1003 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,834 MB. GUI used memory: 86 MB. Current time: 4/27/26, 4:52:44 PM CEST
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 2204 ms. Increasing delay to 4000 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 620 ms. Decreasing delay to 2620 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1292 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  5186 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 5003 ms. Increasing delay to 15009 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 3,018 MB. GUI used memory: 86 MB. Current time: 4/27/26, 4:53:00 PM CEST
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 3201 ms. Increasing delay to 5000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1708 ms.
+// [Engine Memory]: 3,010 MB (+399261kb) [00:33:04]
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 389 ms. Decreasing delay to 2389 ms.
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 32m:43s
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 1815 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK", "Bitstream Generation Completed"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_GOTO_IMPLEMENTED_DESIGN
+// Tcl Message: open_run impl_1 
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: POWER_CNS_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// HMemoryUtils.trashcanNow. Engine heap size: 3,314 MB. GUI used memory: 88 MB. Current time: 4/27/26, 5:23:01 PM CEST
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 3,326 MB. GUI used memory: 87 MB. Current time: 4/27/26, 5:23:02 PM CEST
+// [Engine Memory]: 3,327 MB (+174290kb) [01:02:59]
+// [Engine Memory]: 3,566 MB (+77051kb) [01:03:02]
+// Xgd.load filename: /data2/home/cese4040-08/pdp-project-08/hardware/./.Xil/Vivado-1035774-ce-procdesign01.ewi.tudelft.nl/xc7z020_detail.xgd_5E57ECD3 elapsed time: 2.3s
+// DeviceModel: Load Xgds SwingWorker Join Forever elapsed time: 2.8s
+// TclEventType: DESIGN_NEW
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// RouteApi::loadEngineXgdAndInitRouteStorage elapsed time: 3.1s
+// [GUI Memory]: 183 MB (+17144kb) [01:03:08]
+// [Engine Memory]: 3,815 MB (+73836kb) [01:03:08]
+// DeviceView Instantiated
+// WARNING: HEventQueue.dispatchEvent() is taking  6922 ms.
+// Tcl Message: INFO: [Device 21-403] Loading part xc7z020clg400-1 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.32 ; elapsed = 00:00:00.32 . Memory (MB): peak = 9219.051 ; gain = 0.000 ; free physical = 105670 ; free virtual = 120258 
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 638 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2024.2 INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message: Read ShapeDB Complete: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.08 . Memory (MB): peak = 9219.051 ; gain = 0.000 ; free physical = 105535 ; free virtual = 120126 
+// Tcl Message: INFO: [Timing 38-478] Restoring timing data from binary archive. INFO: [Timing 38-479] Binary timing data restore complete. INFO: [Project 1-856] Restoring constraints from binary archive. INFO: [Project 1-853] Binary constraint restore complete. INFO: [Designutils 20-5722] Start Reading Physical Databases. 
+// Tcl Message: Reading placement. 
+// Tcl Message: Read Netlist Cache: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.02 . Memory (MB): peak = 9399.727 ; gain = 0.000 ; free physical = 105008 ; free virtual = 119602 
+// Tcl Message: Reading placer database... 
+// Tcl Message: Read Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 9399.727 ; gain = 0.000 ; free physical = 105006 ; free virtual = 119601 Read PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.91 . Memory (MB): peak = 9430.742 ; gain = 31.016 ; free physical = 104995 ; free virtual = 119589 Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 9430.742 ; gain = 0.000 ; free physical = 104995 ; free virtual = 119589 
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: Reading routing. 
+// Tcl Message: Read RouteStorage: Time (s): cpu = 00:00:00.65 ; elapsed = 00:00:00.23 . Memory (MB): peak = 9436.742 ; gain = 6.000 ; free physical = 104982 ; free virtual = 119576 Read Physdb Files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 9436.742 ; gain = 37.016 ; free physical = 104982 ; free virtual = 119576 
+// Tcl Message: Restored from archive | CPU: 1.980000 secs | Memory: 22.830338 MB | 
+// Tcl Message: Finished XDEF File Restore: Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 9436.742 ; gain = 37.016 ; free physical = 104982 ; free virtual = 119576 Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 9436.742 ; gain = 0.000 ; free physical = 104992 ; free virtual = 119587 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary:   A total of 134 instances were transformed.   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 129 instances   RAM32X1D => RAM32X1D (RAMD32(x2)): 5 instances  
+// TclEventType: CURR_DESIGN_SET
+// Device view-level: 0.0
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// Tcl Message: open_run: Time (s): cpu = 00:00:49 ; elapsed = 00:00:33 . Memory (MB): peak = 10287.027 ; gain = 1067.977 ; free physical = 104424 ; free virtual = 119054 
+// ExpRunCommands.openImplResults elapsed time: 34.2s
+// TclEventType: DRC_ADDED
+// TclEventType: METHODOLOGY_ADDED
+// TclEventType: POWER_UPDATED
+// [GUI Memory]: 204 MB (+11912kb) [01:03:17]
+// [GUI Memory]: 215 MB (+1137kb) [01:03:18]
+// [Engine Memory]: 4,120 MB (+119293kb) [01:03:18]
+// [GUI Memory]: 226 MB (+661kb) [01:03:18]
+// WARNING: HEventQueue.dispatchEvent() is taking  5448 ms.
+// TclEventType: TIMING_SUMMARY_UPDATED
+// HMemoryUtils.trashcanNow. Engine heap size: 4,143 MB. GUI used memory: 141 MB. Current time: 4/27/26, 5:23:22 PM CEST
+// TclEventType: TIMING_SUMMARY_UPDATED
+// WARNING: HEventQueue.dispatchEvent() is taking  1060 ms.
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/q.a': 44s
+// 'dV' command handler elapsed time: 46 seconds
+// WARNING: HEventQueue.dispatchEvent() is taking  2049 ms.
+// Device view-level: 0.1
+// Device view-level: 0.0
+// Elapsed time: 46 seconds
+dismissDialog("Open Implemented Design"); // bh (Open Implemented Design Progress)
+// HMemoryUtils.trashcanNow. Engine heap size: 4,286 MB. GUI used memory: 130 MB. Current time: 4/27/26, 5:53:27 PM CEST

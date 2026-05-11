@@ -1,0 +1,349 @@
+/*
+
+AMD Vivado v2024.2 (64-bit) [Major: 2024, Minor: 2]
+SW Build: 5239630 on Fri Nov 08 22:34:34 MST 2024
+IP Build: 5239520 on Sun Nov 10 16:12:51 MST 2024
+IP Build: 5239520 on Sun Nov 10 16:12:51 MST 2024
+
+Process ID (PID): 239153
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Sat Apr 25 01:46:57 CEST 2026
+Time zone: 	Central European Standard Time (Europe/Amsterdam)
+
+OS: Red Hat Enterprise Linux release 9.7 (Plow)
+OS Version: 5.14.0-570.49.1.el9_6.x86_64
+OS Architecture: amd64
+Available processors (cores): 64
+LSB Release Description: Red Hat Enterprise Linux release 9.7 (Plow)
+
+Display: localhost:10.0
+Screen size: 1707x996
+Local screen bounds: x = 0, y = 25, width = 1707, height = 947
+Screen resolution (DPI): 98
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+OS font scaling: 98%
+Anti-Alias Enabled: true
+
+Java version: 	21.0.1 64-bit
+
+Java home: 	/data/apps/xilinx/Vivado/2024.2/tps/lnx64/jre21.0.1_12
+Java executable: 	/data/apps/xilinx/Vivado/2024.2/tps/lnx64/jre21.0.1_12/bin/java
+Java arguments: 	[-Dsun.java2d.pmoffscreen=false, -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2, -Dsun.java2d.xrender=false, -Dsun.java2d.uiScale.enabled=false, -Dswing.aatext=true, -XX:-UsePerfData, -Djdk.map.althashing.threshold=512, -XX:StringTableSize=4072, -XX:+UseStringDeduplication, -XX:MaxGCPauseMillis=200, -XX:ParallelGCThreads=4, -XX:+ParallelRefProcEnabled, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.desktop/sun.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/java.awt.event=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.base/java.nio=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.table=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.desktop/sun.awt.shell=ALL-UNNAMED, --add-exports=java.base/sun.security.action=ALL-UNNAMED, --add-exports=java.desktop/sun.font=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, -XX:NewSize=80m, -XX:MaxNewSize=80m, -Xms512m, -Xmx4072m, -Xss10m, -Xrs]
+Java initial memory (-Xms): 	512 MB
+Java maximum memory (-Xmx):	 3 GB
+
+User name: 	cese4040-08
+User home directory: /data2/home/cese4040-08
+User working directory: /data2/home/cese4040-08/pdp-project-08/hardware
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /data/apps/xilinx/Vivado
+HDI_APPROOT: /opt/apps/xilinx/Vivado/2024.2
+RDI_DATADIR: /data/apps/xilinx/SharedData/2024.2/data:/opt/apps/xilinx/Vivado/2024.2/data
+RDI_BINDIR: /data/apps/xilinx/Vivado/2024.2/bin
+
+Vivado preferences file: /data/home/cese4040-08/.Xilinx/Vivado/2024.2/vivado.xml
+Vivado preferences directory: /data/home/cese4040-08/.Xilinx/Vivado/2024.2/
+Vivado layouts directory: /data2/home/cese4040-08/.Xilinx/Vivado/2024.2/data/layouts
+PlanAhead jar file: 	/data/apps/xilinx/Vivado/2024.2/lib/classes/planAhead.jar
+Vivado log file: 	/data2/home/cese4040-08/pdp-project-08/hardware/vivado.log
+Vivado journal file: 	/data2/home/cese4040-08/pdp-project-08/hardware/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-239153-ce-procdesign01.ewi.tudelft.nl
+Non-Default Parameters:	[]
+
+Xilinx & AMD Environment Variables
+--------------------------------------------------------------------------------------------
+LMOD_FAMILY_XILINX: Vivado
+LMOD_FAMILY_XILINX_VERSION: 2024.2
+RDI_APPROOT: /opt/apps/xilinx/Vivado/2024.2
+RDI_BASEROOT: /opt/apps/xilinx/Vivado
+RDI_BINROOT: /opt/apps/xilinx/Vivado/2024.2/bin
+RDI_BUILD: yes
+RDI_DATADIR: /opt/apps/xilinx/SharedData/2024.2/data:/opt/apps/xilinx/Vivado/2024.2/data
+RDI_INSTALLROOT: /opt/apps/xilinx
+RDI_INSTALLVER: 2024.2
+RDI_JAVA_PLATFORM: 
+RDI_JAVA_VERSION: 21.0.1_12
+RDI_LIBDIR: /opt/apps/xilinx/Vivado/2024.2/lib/lnx64.o/Rhel/9:/opt/apps/xilinx/Vivado/2024.2/lib/lnx64.o/Rhel:/opt/apps/xilinx/Vivado/2024.2/lib/lnx64.o
+RDI_OPT_EXT: .o
+RDI_PATCHROOT: 
+RDI_PLATFORM: lnx64
+RDI_PREPEND_PATH: /opt/apps/xilinx/Vitis/2024.2/bin:/opt/apps/xilinx/Vivado/2024.2/ids_lite/ISE/bin/lin64
+RDI_PROG: /opt/apps/xilinx/Vivado/2024.2/bin/unwrapped/lnx64.o/vivado
+RDI_SESSION_INFO: /data2/home/cese4040-08/pdp-project-08/hardware:ce-procdesign01.ewi.tudelft.nl_1777074390_239101
+RDI_SHARED_DATA: /opt/apps/xilinx/SharedData/2024.2/data
+RDI_TPS_ROOT: /opt/apps/xilinx/Vivado/2024.2/tps/lnx64
+RDI_USE_JDK21: True
+SHELL: /bin/bash
+XILINX: /opt/apps/xilinx/Vivado/2024.2/ids_lite/ISE
+XILINXD_LICENSE_FILE: /opt/apps/license/xilinx.lic
+XILINX_DSP: /opt/apps/xilinx/Vivado/2024.2/ids_lite/ISE
+XILINX_HLS: /opt/apps/xilinx/Vitis/2024.2
+XILINX_PLANAHEAD: /opt/apps/xilinx/Vivado/2024.2
+XILINX_SDK: /opt/apps/xilinx/Vitis/2024.2
+XILINX_VITIS: /opt/apps/xilinx/Vitis/2024.2
+XILINX_VIVADO: /opt/apps/xilinx/Vivado/2024.2
+
+
+GUI allocated memory:	512 MB
+GUI max memory:		4,072 MB
+Engine allocated memory: 1,512 MB
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+selectList(PAResourceQtoS.SyntheticaGettingStartedView_RECENT_PROJECTS, "/data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy/riscy.xpr", 0); // b.c (PAResourceQtoS.SyntheticaGettingStartedView_RECENT_PROJECTS)
+// [GUI Memory]: 134 MB (+138103kb) [00:00:18]
+// [Engine Memory]: 1,520 MB (+1442347kb) [00:00:18]
+// Opening Vivado Project: /data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy/riscy.xpr. Version: Vivado v2024.2 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,552 MB. GUI used memory: 69 MB. Current time: 4/25/26, 1:46:59 AM CEST
+// Tcl Message: open_project /data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy/riscy.xpr 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 1,813 MB (+227822kb) [00:00:41]
+// [Engine Memory]: 2,281 MB (+395581kb) [00:00:43]
+// WARNING: HEventQueue.dispatchEvent() is taking  4902 ms.
+// Tcl Message: open_project /data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy/riscy.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/apps/xilinx/Vivado/2024.2/data/ip'. 
+// Tcl Message: INFO: [Project 1-5579] Found utility IPs instantiated in one or more block designs which have equivalent inline hdl with improved performance and reduced diskspace. It is recommended to migrate these utility IPs to inline hdl using the command upgrade_project -migrate_to_inline_hdl. The utility IPs may be deprecated in future releases. More information on inline hdl is available in UG994. 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,311 MB. GUI used memory: 80 MB. Current time: 4/25/26, 1:47:26 AM CEST
+// WARNING: HEventQueue.dispatchEvent() is taking  1533 ms.
+// Tcl Message: open_project: Time (s): cpu = 00:00:36 ; elapsed = 00:00:28 . Memory (MB): peak = 8445.934 ; gain = 797.398 ; free physical = 113974 ; free virtual = 123434 
+// Project name: riscy; location: /data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy; part: xc7z020clg400-1
+// Elapsed time: 30 seconds
+dismissDialog("Open Project"); // bh (Open Project Progress)
+// [Engine Memory]: 2,632 MB (+248225kb) [00:00:55]
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 1086 ms. Increasing delay to 3258 ms.
+// [GUI Memory]: 142 MB (+1097kb) [00:00:57]
+// HMemoryUtils.trashcanNow. Engine heap size: 2,759 MB. GUI used memory: 80 MB. Current time: 4/25/26, 1:47:49 AM CEST
+// [Engine Memory]: 2,863 MB (+104122kb) [00:01:19]
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  1427 ms.
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 41s
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// [GUI Memory]: 151 MB (+2468kb) [00:01:26]
+// WARNING: HTimer (FileMgr Design Graph Update Timer) is taking 692ms to process. Increasing delay to 3000 ms.
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 45s
+// HMemoryUtils.trashcanNow. Engine heap size: 2,998 MB. GUI used memory: 81 MB. Current time: 4/25/26, 1:48:24 AM CEST
+// TclEventType: DG_GRAPH_STALE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 01m:07s
+// [Engine Memory]: 3,422 MB (+435841kb) [00:01:52]
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 01m:15s
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 118 seconds
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "riscv ;  ; Submodule Runs Failed ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Sat Apr 25 01:26:34 CEST 2026 ; 00:18:27 ;  ;  ;  ;  ; ", 3, "riscv", 0, true); // ar (PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE) - Node
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "riscv ;  ; Submodule Runs Failed ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Sat Apr 25 01:26:34 CEST 2026 ; 00:18:27 ;  ;  ;  ;  ; ", 3, "riscv", 0, true, false, false, false, true, false); // ar (PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE) - Popup Trigger - Node
+// [GUI Memory]: 159 MB (+77kb) [00:02:51]
+expandTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "riscv ;  ; Submodule Runs Failed ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Sat Apr 25 01:26:34 CEST 2026 ; 00:18:27 ;  ;  ;  ;  ; ", 3); // ar (PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "riscv_instr_mem_0_synth_1 ; riscv_instr_mem_0 ; Synthesis Out-of-date ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Sat Apr 25 01:43:34 CEST 2026 ; 00:01:27 ; Vivado Synthesis Defaults (Vivado Synthesis 2024) ; Vivado Synthesis Default Reports (Vivado Synthesis 2024) ; xc7z020clg400-1 ; ce-procdesign01.ewi.tudelft.nl ; Vivado Synthesis Defaults", 7, "riscv_instr_mem_0_synth_1", 0, false); // ar (PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE)
+// PAPropertyPanels.initPanels (riscv_instr_mem_0_synth_1) elapsed time: 0.5s
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "riscv_instr_mem_0_synth_1 ; riscv_instr_mem_0 ; Synthesis Out-of-date ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Sat Apr 25 01:43:34 CEST 2026 ; 00:01:27 ; Vivado Synthesis Defaults (Vivado Synthesis 2024) ; Vivado Synthesis Default Reports (Vivado Synthesis 2024) ; xc7z020clg400-1 ; ce-procdesign01.ewi.tudelft.nl ; Vivado Synthesis Defaults", 7, "riscv_instr_mem_0_synth_1", 0, false); // ar (PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "riscv_data_mem_0_synth_1 ; riscv_data_mem_0 ; Synthesis Out-of-date ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Sat Apr 25 01:43:34 CEST 2026 ; 00:01:19 ; Vivado Synthesis Defaults (Vivado Synthesis 2024) ; Vivado Synthesis Default Reports (Vivado Synthesis 2024) ; xc7z020clg400-1 ; ce-procdesign01.ewi.tudelft.nl ; Vivado Synthesis Defaults", 6, "riscv_data_mem_0_synth_1", 0, false); // ar (PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE)
+selectTab(RDIResource.PropertiesView_TABBED_PANE, (HResource) null, "Log", 3); // g (RDIResource.PropertiesView_TABBED_PANE)
+selectCodeEditor(PAResourceItoN.LogMonitor_MONITOR, 2, 14); // B (PAResourceItoN.LogMonitor_MONITOR, Monitor)
+typeControlKey(PAResourceItoN.LogMonitor_MONITOR, "Monitor", 'c'); // B (PAResourceItoN.LogMonitor_MONITOR, Monitor)
+// Elapsed time: 118 seconds
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // aa
+// Tcl (Dont Echo) Command: 'rdi::info_commands {start_gu*}'
+// Tcl (Dont Echo) Command: 'rdi::info_commands {sour*}'
+// Tcl (Dont Echo) Command: 'rdi::info_commands bd::match_path'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source ./scripts/run", true); // h.b (RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE)
+applyEnter(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source ./scripts/run_synth_impl.tcl"); // h.b (RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE)
+// Tcl Command: 'source ./scripts/run_synth_impl.tcl'
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// Tcl Message: source ./scripts/run_synth_impl.tcl 
+// TclEventType: RUN_RESET
+// Tcl Message: # update_compile_order -fileset sources_1 # launch_runs impl_1 -to_step write_bitstream -jobs 1 
+// Tcl Message: INFO: [IP_Flow 19-6930] IPCACHE: runCacheChecks() number of threads = 8 INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP riscv_data_mem_0 INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP riscv_instr_mem_0 INFO: [IP_Flow 19-8020] IPCACHE: runCacheChecks() calling threadPool finishWork() INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: riscv_data_mem_0 INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: riscv_instr_mem_0 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  3952 ms.
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sat Apr 25 01:52:03 2026] Launched riscv_data_mem_0_synth_1, riscv_instr_mem_0_synth_1, synth_1... Run output will be captured here: riscv_data_mem_0_synth_1: /data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy/riscy.runs/riscv_data_mem_0_synth_1/runme.log riscv_instr_mem_0_synth_1: /data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy/riscy.runs/riscv_instr_mem_0_synth_1/runme.log synth_1: /data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy/riscy.runs/synth_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 4051 ms. Increasing delay to 3000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1556 ms.
+// TclEventType: RUN_MODIFY
+// WARNING: HEventQueue.dispatchEvent() is taking  1600 ms.
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sat Apr 25 01:52:12 2026] Launched impl_1... Run output will be captured here: /data2/home/cese4040-08/pdp-project-08/hardware/vivado/riscy/riscy.runs/impl_1/runme.log 
+// Tcl Message: launch_runs: Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 9856.602 ; gain = 0.000 ; free physical = 112948 ; free virtual = 122417 
+// Tcl Message: # wait_on_run -timeout 30 impl_1 
+// Tcl Message: [Sat Apr 25 01:52:13 2026] Waiting for impl_1 to finish (timeout in 30 minutes)... 
+// Elapsed time: 14 seconds
+selectButton(RDIResource.ProgressDialog_BACKGROUND, "Background", "Tcl Command"); // a (RDIResource.ProgressDialog_BACKGROUND)
+selectTab((HResource) null, (HResource) null, "Design Runs", 4); // aa
+// Tcl Message: [Sat Apr 25 01:52:18 2026] Waiting for impl_1 to finish (timeout in 30 minutes)... 
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "riscv_data_mem_0_synth_1 ; riscv_data_mem_0 ; Running synth_design... ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Sat Apr 25 01:52:06 CEST 2026 ; 00:00:10 ; Vivado Synthesis Defaults (Vivado Synthesis 2024) ; Vivado Synthesis Default Reports (Vivado Synthesis 2024) ; xc7z020clg400-1 ; ce-procdesign01.ewi.tudelft.nl ; Vivado Synthesis Defaults", 6, "riscv_data_mem_0_synth_1", 0, false); // ar (PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE)
+expandTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "riscv_data_mem_0_synth_1 ; riscv_data_mem_0 ; Running synth_design... ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Sat Apr 25 01:52:06 CEST 2026 ; 00:00:10 ; Vivado Synthesis Defaults (Vivado Synthesis 2024) ; Vivado Synthesis Default Reports (Vivado Synthesis 2024) ; xc7z020clg400-1 ; ce-procdesign01.ewi.tudelft.nl ; Vivado Synthesis Defaults", 6); // ar (PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "riscv_data_mem_0_synth_1 ; riscv_data_mem_0 ; Running synth_design... ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Sat Apr 25 01:52:06 CEST 2026 ; 00:00:10 ; Vivado Synthesis Defaults (Vivado Synthesis 2024) ; Vivado Synthesis Default Reports (Vivado Synthesis 2024) ; xc7z020clg400-1 ; ce-procdesign01.ewi.tudelft.nl ; Vivado Synthesis Defaults", 6, "riscv_data_mem_0_synth_1", 0, false, false, false, false, false, true); // ar (PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE) - Double Click
+// Tcl Message: [Sat Apr 25 01:52:23 2026] Waiting for impl_1 to finish (timeout in 30 minutes)... 
+// Tcl Message: [Sat Apr 25 01:52:28 2026] Waiting for impl_1 to finish (timeout in 30 minutes)... 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,474 MB. GUI used memory: 86 MB. Current time: 4/25/26, 1:52:30 AM CEST
+// Tcl Message: [Sat Apr 25 01:52:38 2026] Waiting for impl_1 to finish (timeout in 30 minutes)... 
+// Tcl Message: [Sat Apr 25 01:52:49 2026] Waiting for impl_1 to finish (timeout in 29 minutes)... 
+// Tcl Message: [Sat Apr 25 01:52:59 2026] Waiting for impl_1 to finish (timeout in 29 minutes)... 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,475 MB. GUI used memory: 86 MB. Current time: 4/25/26, 1:53:01 AM CEST
+// Tcl Message: [Sat Apr 25 01:53:09 2026] Waiting for impl_1 to finish (timeout in 29 minutes)... 
+// WARNING: HEventQueue.dispatchEvent() is taking  1706 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,475 MB. GUI used memory: 86 MB. Current time: 4/25/26, 1:53:32 AM CEST
+// Tcl Message: [Sat Apr 25 01:53:29 2026] Waiting for impl_1 to finish (timeout in 29 minutes)... 
+// Tcl Message: [Sat Apr 25 01:53:50 2026] Waiting for impl_1 to finish (timeout in 28 minutes)... 
+// WARNING: HEventQueue.dispatchEvent() is taking  1210 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,470 MB. GUI used memory: 86 MB. Current time: 4/25/26, 1:54:02 AM CEST
+// Tcl Message: [Sat Apr 25 01:54:10 2026] Waiting for impl_1 to finish (timeout in 28 minutes)... 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,470 MB. GUI used memory: 86 MB. Current time: 4/25/26, 1:54:31 AM CEST
+// Tcl Message: [Sat Apr 25 01:54:30 2026] Waiting for impl_1 to finish (timeout in 28 minutes)... 
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  1262 ms.
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 2204 ms. Increasing delay to 4000 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,460 MB. GUI used memory: 87 MB. Current time: 4/25/26, 1:55:01 AM CEST
+// Tcl Message: [Sat Apr 25 01:55:11 2026] Waiting for impl_1 to finish (timeout in 27 minutes)... 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,460 MB. GUI used memory: 88 MB. Current time: 4/25/26, 1:55:31 AM CEST
+// Tcl Message: [Sat Apr 25 01:55:52 2026] Waiting for impl_1 to finish (timeout in 26 minutes)... 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,460 MB. GUI used memory: 88 MB. Current time: 4/25/26, 1:56:01 AM CEST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,460 MB. GUI used memory: 87 MB. Current time: 4/25/26, 1:56:31 AM CEST
+// Tcl Message: [Sat Apr 25 01:56:33 2026] Waiting for impl_1 to finish (timeout in 26 minutes)... 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// HMemoryUtils.trashcanNow. Engine heap size: 2,467 MB. GUI used memory: 88 MB. Current time: 4/25/26, 1:57:01 AM CEST
+// Tcl Message: [Sat Apr 25 01:57:14 2026] Waiting for impl_1 to finish (timeout in 25 minutes)... 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,460 MB. GUI used memory: 87 MB. Current time: 4/25/26, 1:57:31 AM CEST
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: [Sat Apr 25 01:58:35 2026] Waiting for impl_1 to finish (timeout in 24 minutes)... 
+// TclEventType: RUN_STEP_COMPLETED
+// Tcl Message: [Sat Apr 25 01:59:56 2026] Waiting for impl_1 to finish (timeout in 22 minutes)... 
+// TclEventType: RUN_STEP_COMPLETED
+// Tcl Message: [Sat Apr 25 02:01:18 2026] Waiting for impl_1 to finish (timeout in 21 minutes)... 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,470 MB. GUI used memory: 89 MB. Current time: 4/25/26, 2:02:01 AM CEST
+// TclEventType: RUN_STEP_COMPLETED
+// HMemoryUtils.trashcanNow. Engine heap size: 2,475 MB. GUI used memory: 89 MB. Current time: 4/25/26, 2:02:31 AM CEST
+// Elapsed time: 615 seconds
+selectTreeTableHeader(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "WNS", 3); // ar (PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE)
+// Tcl Message: [Sat Apr 25 02:02:39 2026] Waiting for impl_1 to finish (timeout in 20 minutes)... 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,470 MB. GUI used memory: 89 MB. Current time: 4/25/26, 2:03:01 AM CEST
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: [Sat Apr 25 02:03:16 2026] impl_1 finished 
+// Tcl Message: wait_on_runs: Time (s): cpu = 00:06:51 ; elapsed = 00:11:03 . Memory (MB): peak = 9856.602 ; gain = 0.000 ; free physical = 114501 ; free virtual = 123284 
+// Elapsed Time for: 'b.c': 11m:16s
+// Elapsed time: 39 seconds
+dismissDialog("Tcl Command"); // bh (Tcl Command Progress)
+// TclEventType: FILE_SET_CHANGE
+// [GUI Memory]: 167 MB (+63kb) [00:16:39]
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 15m:55s

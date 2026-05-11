@@ -1,4 +1,5 @@
 # Define folders
+FPGA_INPUT_DIR := /data/home/cese4040-08/pdp-project-08/hardware/src/sw/mem_files
 SOFT_DIR := soft
 ACC_DIR := acc
 INCLUDE_DIR := include
@@ -64,6 +65,8 @@ soft: $(SOFT_OBJS) crt0.riscv.o
 	$(OBJCOPY) -O srec $(OUTPUT_DIR)/soft.elf $(OUTPUT_DIR)/soft.srec
 	$(PYTHON) python_script/srec_to_coe.py   $(OUTPUT_DIR)/soft.srec $(PYTHON_FLAGS_CODE) -o $(BIN_DIR)/code.coe
 	$(PYTHON) python_script/srec_to_coe.py   $(OUTPUT_DIR)/soft.srec $(PYTHON_FLAGS_DATA) -o $(BIN_DIR)/data.coe
+	cp $(BIN_DIR)/code.coe $(FPGA_INPUT_DIR)
+	cp $(BIN_DIR)/data.coe $(FPGA_INPUT_DIR)
 
 # Clean rule
 clean:
