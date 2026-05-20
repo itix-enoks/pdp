@@ -600,8 +600,31 @@ module cv32e40p_decoder import cv32e40p_pkg::*; import cv32e40p_apu_core_pkg::*;
 
       OPCODE_OP: begin  // Register-Register ALU operation
 
+        //////////////////////////////////////////////////////////////////////
+        // RISC-V Zkne: aes32esi / aes32esmi
+        //   aes32esi  rd, rs1, rs2, bs : funct7 = {bs[1:0], 5'b10001}
+        //   aes32esmi rd, rs1, rs2, bs : funct7 = {bs[1:0], 5'b10011}
+        //   funct3 = 000, opcode = OP (0x33)
+        // bs spans instr[31:30], so it can overlap any of the existing
+        // CV32E40P "prefix" branches below. Intercept first.
+        //////////////////////////////////////////////////////////////////////
+        if (instr_rdata_i[14:12] == 3'b000 &&
+            (instr_rdata_i[29:25] == 5'b10001 ||
+             instr_rdata_i[29:25] == 5'b10011)) begin
+          alu_en             = 1'b1;
+          regfile_alu_we     = 1'b1;
+          rega_used_o        = 1'b1;
+          regb_used_o        = 1'b1;
+          // bit [2] = mix flag (1 for aes32esmi, 0 for aes32esi);
+          //          aes32esmi has instr[26]=1, aes32esi has instr[26]=0.
+          // bits [1:0] = bs from instr[31:30].
+          alu_operator_o = alu_opcode_e'({4'b1110,
+                                          instr_rdata_i[26],
+                                          instr_rdata_i[31:30]});
+        end
+
         // PREFIX 11
-        if (instr_rdata_i[31:30] == 2'b11) begin
+        else if (instr_rdata_i[31:30] == 2'b11) begin
           if (PULP_XPULP) begin
             //////////////////////////////
             // IMMEDIATE BIT-MANIPULATION

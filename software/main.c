@@ -2,6 +2,57 @@
 #include <stdint.h>
 #include <string.h>
 
+// ===========================================================================
+// RISC-V Zkne AES inline-asm helpers
+// ===========================================================================
+//
+// We emit aes32esmi / aes32esi using the GNU `.insn r` directive so the
+// toolchain does NOT need to know the Zkne mnemonics or be built with a
+// matching -march. The decoder + ALU integration in the riscy core handles
+// the rest.
+//
+// Encoding (RISC-V K-extension scalar crypto, Zkne):
+//   aes32esmi rd, rs1, rs2, bs : opcode=OP (0x33), funct3=000,
+//                                funct7 = {bs[1:0], 5'b10011}
+//   aes32esi  rd, rs1, rs2, bs : opcode=OP (0x33), funct3=000,
+//                                funct7 = {bs[1:0], 5'b10001}
+//
+// We use the read-modify-write form rd==rs1==acc to drive the canonical
+// "accumulator chain" pattern: one accumulator gathers four AES contributions
+// (one per source byte) to produce one output column.
+//
+// `bs_const` MUST be a compile-time literal in [0,3]. The `"i"` constraint
+// requires this, since funct7 is part of the instruction word.
+
+#define AES32ESMI(acc, src, bs_const)                                    \
+    asm volatile (".insn r 0x33, 0, %2, %0, %0, %1"                      \
+                  : "+r"(acc)                                            \
+                  : "r"(src),                                            \
+                    "i"(0x13 | ((bs_const) << 5)))
+
+#define AES32ESI(acc, src, bs_const)                                     \
+    asm volatile (".insn r 0x33, 0, %2, %0, %0, %1"                      \
+                  : "+r"(acc)                                            \
+                  : "r"(src),                                            \
+                    "i"(0x11 | ((bs_const) << 5)))
+
+// Little-endian byte<->word packing for the AES state and round keys.
+// round_keys[] is uint8_t (possibly unaligned), so we go byte-by-byte
+// rather than risking an unaligned 32-bit load on RV32.
+static inline uint32_t pack_le32(const uint8_t *p) {
+    return  (uint32_t)p[0]
+         | ((uint32_t)p[1] << 8)
+         | ((uint32_t)p[2] << 16)
+         | ((uint32_t)p[3] << 24);
+}
+
+static inline void unpack_le32(uint8_t *p, uint32_t w) {
+    p[0] = (uint8_t)(w);
+    p[1] = (uint8_t)(w >> 8);
+    p[2] = (uint8_t)(w >> 16);
+    p[3] = (uint8_t)(w >> 24);
+}
+
 // S-box for SubBytes (precomputed substitution table)
 static const uint8_t sbox[256] = {
     0x63, 0x7c, 0x77, 0x7b, 0xf2, 0x6b, 0x6f, 0xc5, 0x30, 0x01, 0x67, 0x2b, 0xfe, 0xd7, 0xab, 0x76,
@@ -105,28 +156,101 @@ void add_round_key(uint8_t *state, uint8_t *round_key) {
     }
 }
 
-// Single block AES-128 encryption
+// Single block AES-128 encryption — Zkne (aes32esmi / aes32esi) accelerated.
+//
+// State is held in four 32-bit words s[0..3], one per AES column, with row 0
+// in the LSB and row 3 in the MSB (little-endian column packing).
+//
+// For each round, the four output columns are each built as an accumulator
+// chain starting from the round-key word for that column. ShiftRows is
+// folded into the source-word selection: byte `r` of output column `j`
+// comes from byte `r` of input column `(j+r) & 3`. Because aes32es{,m}i
+// reads byte `bs` of rs2, we set bs = r and pick rs2 = s[(j+r) & 3].
 void aes128_encrypt_block(uint8_t *plaintext, uint8_t *round_keys, uint8_t *ciphertext) {
-    uint8_t state[16];
-    memcpy(state, plaintext, 16);
+    uint32_t s0, s1, s2, s3;
+    uint32_t t0, t1, t2, t3;
+    uint32_t rk0, rk1, rk2, rk3;
 
-    // Initial round
-    add_round_key(state, round_keys);
+    // Load plaintext (4 columns, little-endian).
+    s0 = pack_le32(&plaintext[0]);
+    s1 = pack_le32(&plaintext[4]);
+    s2 = pack_le32(&plaintext[8]);
+    s3 = pack_le32(&plaintext[12]);
 
-    // Main rounds (1 to 9)
+    // Initial AddRoundKey (round 0).
+    rk0 = pack_le32(&round_keys[0]);
+    rk1 = pack_le32(&round_keys[4]);
+    rk2 = pack_le32(&round_keys[8]);
+    rk3 = pack_le32(&round_keys[12]);
+    s0 ^= rk0; s1 ^= rk1; s2 ^= rk2; s3 ^= rk3;
+
+    // Main rounds 1..9: SubBytes + ShiftRows + MixColumns + AddRoundKey,
+    // fused per-column via aes32esmi.
     for (int round = 1; round < 10; round++) {
-        sub_bytes(state);
-        shift_rows(state);
-        mix_columns(state);
-        add_round_key(state, &round_keys[round * 16]);
+        const uint8_t *rkp = &round_keys[round * 16];
+        t0 = pack_le32(&rkp[0]);
+        t1 = pack_le32(&rkp[4]);
+        t2 = pack_le32(&rkp[8]);
+        t3 = pack_le32(&rkp[12]);
+
+        // Output column 0: source columns (0,1,2,3) for rows (0,1,2,3).
+        AES32ESMI(t0, s0, 0);
+        AES32ESMI(t0, s1, 1);
+        AES32ESMI(t0, s2, 2);
+        AES32ESMI(t0, s3, 3);
+        // Output column 1: source columns (1,2,3,0).
+        AES32ESMI(t1, s1, 0);
+        AES32ESMI(t1, s2, 1);
+        AES32ESMI(t1, s3, 2);
+        AES32ESMI(t1, s0, 3);
+        // Output column 2: source columns (2,3,0,1).
+        AES32ESMI(t2, s2, 0);
+        AES32ESMI(t2, s3, 1);
+        AES32ESMI(t2, s0, 2);
+        AES32ESMI(t2, s1, 3);
+        // Output column 3: source columns (3,0,1,2).
+        AES32ESMI(t3, s3, 0);
+        AES32ESMI(t3, s0, 1);
+        AES32ESMI(t3, s1, 2);
+        AES32ESMI(t3, s2, 3);
+
+        s0 = t0; s1 = t1; s2 = t2; s3 = t3;
     }
 
-    // Final round (10)
-    sub_bytes(state);
-    shift_rows(state);
-    add_round_key(state, &round_keys[10 * 16]);
+    // Final round (10): SubBytes + ShiftRows + AddRoundKey (no MixColumns),
+    // fused per-column via aes32esi.
+    {
+        const uint8_t *rkp = &round_keys[10 * 16];
+        t0 = pack_le32(&rkp[0]);
+        t1 = pack_le32(&rkp[4]);
+        t2 = pack_le32(&rkp[8]);
+        t3 = pack_le32(&rkp[12]);
 
-    memcpy(ciphertext, state, 16);
+        AES32ESI(t0, s0, 0);
+        AES32ESI(t0, s1, 1);
+        AES32ESI(t0, s2, 2);
+        AES32ESI(t0, s3, 3);
+        AES32ESI(t1, s1, 0);
+        AES32ESI(t1, s2, 1);
+        AES32ESI(t1, s3, 2);
+        AES32ESI(t1, s0, 3);
+        AES32ESI(t2, s2, 0);
+        AES32ESI(t2, s3, 1);
+        AES32ESI(t2, s0, 2);
+        AES32ESI(t2, s1, 3);
+        AES32ESI(t3, s3, 0);
+        AES32ESI(t3, s0, 1);
+        AES32ESI(t3, s1, 2);
+        AES32ESI(t3, s2, 3);
+
+        s0 = t0; s1 = t1; s2 = t2; s3 = t3;
+    }
+
+    // Store ciphertext (column-major, little-endian — same layout as plaintext).
+    unpack_le32(&ciphertext[0],  s0);
+    unpack_le32(&ciphertext[4],  s1);
+    unpack_le32(&ciphertext[8],  s2);
+    unpack_le32(&ciphertext[12], s3);
 }
 
 // AES-128 ECB encryption (no padding)

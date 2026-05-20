@@ -162,7 +162,21 @@ package cv32e40p_pkg;
     ALU_SHUF  = 7'b0111010,
     ALU_SHUF2 = 7'b0111011,
     ALU_PCKLO = 7'b0111000,
-    ALU_PCKHI = 7'b0111001
+    ALU_PCKHI = 7'b0111001,
+
+    // RISC-V Zkne AES instructions (aes32esi / aes32esmi)
+    // Encoding scheme: operator_i[6:3] = 4'b1110, operator_i[2] = mix flag,
+    //                  operator_i[1:0] = bs (byte select). This lets us carry
+    //                  the bs immediate inside the ALU opcode itself, so the
+    //                  ID->EX->ALU port list does not need a new signal.
+    ALU_AES_ES_BS0   = 7'b1110000,  // aes32esi  bs=0
+    ALU_AES_ES_BS1   = 7'b1110001,  // aes32esi  bs=1
+    ALU_AES_ES_BS2   = 7'b1110010,  // aes32esi  bs=2
+    ALU_AES_ES_BS3   = 7'b1110011,  // aes32esi  bs=3
+    ALU_AES_ESMI_BS0 = 7'b1110100,  // aes32esmi bs=0
+    ALU_AES_ESMI_BS1 = 7'b1110101,  // aes32esmi bs=1
+    ALU_AES_ESMI_BS2 = 7'b1110110,  // aes32esmi bs=2
+    ALU_AES_ESMI_BS3 = 7'b1110111   // aes32esmi bs=3
 
   } alu_opcode_e;
 
