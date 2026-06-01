@@ -176,7 +176,9 @@ package cv32e40p_pkg;
     ALU_AES_ESMI_BS0 = 7'b1110100,  // aes32esmi bs=0
     ALU_AES_ESMI_BS1 = 7'b1110101,  // aes32esmi bs=1
     ALU_AES_ESMI_BS2 = 7'b1110110,  // aes32esmi bs=2
-    ALU_AES_ESMI_BS3 = 7'b1110111   // aes32esmi bs=3
+    ALU_AES_ESMI_BS3 = 7'b1110111,  // aes32esmi bs=3
+
+    ALU_AES_COL      = 7'b1111000   // aes_col (column-fused: SubBytes + ShiftRows + MixColumns + AddRoundKey)
 
   } alu_opcode_e;
 

@@ -5,12 +5,14 @@ module tb_riscv_aes_unit;
     logic [31:0] rs1 = 32'h0, rs2 = 32'h0, result;
     logic [1:0]  bs  = 2'b00;
     logic        mix = 1'b0;
+    logic        col = 1'b0;
 
     riscv_aes_unit dut (
         .rs1_i(rs1),
         .rs2_i(rs2),
         .bs_i(bs),
         .mix_i(mix),
+        .col_i(col),
         .result_o(result)
     );
 
@@ -105,58 +107,52 @@ module tb_riscv_aes_unit;
         sbox_ref['hf8]=8'h41; sbox_ref['hf9]=8'h99; sbox_ref['hfa]=8'h2d; sbox_ref['hfb]=8'h0f;
         sbox_ref['hfc]=8'hb0; sbox_ref['hfd]=8'h54; sbox_ref['hfe]=8'hbb; sbox_ref['hff]=8'h16;
 
-        // SBox spot checks (mix=0, bs=0, rs1=0)
+
         $display("--- Group 1: SBox spot checks ---");
-        mix = 1'b0; bs = 2'b00; rs1 = 32'h0;
-        rs2 = 32'h00000000; check_vec("G1", 1, 32'h00000063); // SBox[0x00]=0x63
-        rs2 = 32'h00000001; check_vec("G1", 2, 32'h0000007C); // SBox[0x01]=0x7C
-        rs2 = 32'h00000010; check_vec("G1", 3, 32'h000000CA); // SBox[0x10]=0xCA
-        rs2 = 32'h00000053; check_vec("G1", 4, 32'h000000ED); // SBox[0x53]=0xED
-        rs2 = 32'h00000052; check_vec("G1", 5, 32'h00000000); // SBox[0x52]=0x00
-        rs2 = 32'h000000FF; check_vec("G1", 6, 32'h00000016); // SBox[0xFF]=0x16
+        col = 1'b0; mix = 1'b0; bs = 2'b00; rs1 = 32'h0;
+        rs2 = 32'h00000000; check_vec("G1", 1, 32'h00000063);
+        rs2 = 32'h00000001; check_vec("G1", 2, 32'h0000007C);
+        rs2 = 32'h00000010; check_vec("G1", 3, 32'h000000CA);
+        rs2 = 32'h00000053; check_vec("G1", 4, 32'h000000ED);
+        rs2 = 32'h00000052; check_vec("G1", 5, 32'h00000000);
+        rs2 = 32'h000000FF; check_vec("G1", 6, 32'h00000016);
 
-        // byte_select at all bs (mix=0, rs1=0, rs2=0xAABBCCDD)
         $display("--- Group 2: byte_select ---");
-        mix = 1'b0; rs1 = 32'h0; rs2 = 32'hAABBCCDD;
-        bs = 2'b00; check_vec("G2", 1, 32'h000000C1); // SBox[0xDD]=0xC1
-        bs = 2'b01; check_vec("G2", 2, 32'h00004B00); // SBox[0xCC]=0x4B, rotL8
-        bs = 2'b10; check_vec("G2", 3, 32'h00EA0000); // SBox[0xBB]=0xEA, rotL16
-        bs = 2'b11; check_vec("G2", 4, 32'hAC000000); // SBox[0xAA]=0xAC, rotL24
+        col = 1'b0; mix = 1'b0; rs1 = 32'h0; rs2 = 32'hAABBCCDD;
+        bs = 2'b00; check_vec("G2", 1, 32'h000000C1);
+        bs = 2'b01; check_vec("G2", 2, 32'h00004B00);
+        bs = 2'b10; check_vec("G2", 3, 32'h00EA0000);
+        bs = 2'b11; check_vec("G2", 4, 32'hAC000000);
 
-        // aes32esmi MixColumns math (mix=1, bs=0, rs1=0)
         $display("--- Group 3: MixColumns math ---");
-        mix = 1'b1; bs = 2'b00; rs1 = 32'h0;
-        rs2 = 32'h00000000; check_vec("G3", 1, 32'hA56363C6); // so=0x63,xt2=0xC6,xt3=0xA5
-        rs2 = 32'h00000053; check_vec("G3", 2, 32'h2CEDEDC1); // so=0xED,xt2=0xC1,xt3=0x2C
-        rs2 = 32'h000000FF; check_vec("G3", 3, 32'h3A16162C); // so=0x16,xt2=0x2C,xt3=0x3A
+        col = 1'b0; mix = 1'b1; bs = 2'b00; rs1 = 32'h0;
+        rs2 = 32'h00000000; check_vec("G3", 1, 32'hA56363C6);
+        rs2 = 32'h00000053; check_vec("G3", 2, 32'h2CEDEDC1);
+        rs2 = 32'h000000FF; check_vec("G3", 3, 32'h3A16162C);
 
-        // rotation (mix=1, rs1=0, byte 0x53 at bs)
         $display("--- Group 4: rotation ---");
-        mix = 1'b1; rs1 = 32'h0;
+        col = 1'b0; mix = 1'b1; rs1 = 32'h0;
         rs2 = 32'h00000053; bs = 2'b00; check_vec("G4", 1, 32'h2CEDEDC1);
         rs2 = 32'h00005300; bs = 2'b01; check_vec("G4", 2, 32'hEDEDC12C);
         rs2 = 32'h00530000; bs = 2'b10; check_vec("G4", 3, 32'hEDC12CED);
         rs2 = 32'h53000000; bs = 2'b11; check_vec("G4", 4, 32'hC12CEDED);
 
-        // aes32esi placement (mix=0, rs1=0, byte 0x53 at bs)
         $display("--- Group 5: esi placement ---");
-        mix = 1'b0; rs1 = 32'h0;
+        col = 1'b0; mix = 1'b0; rs1 = 32'h0;
         rs2 = 32'h00000053; bs = 2'b00; check_vec("G5", 1, 32'h000000ED);
         rs2 = 32'h00005300; bs = 2'b01; check_vec("G5", 2, 32'h0000ED00);
         rs2 = 32'h00530000; bs = 2'b10; check_vec("G5", 3, 32'h00ED0000);
         rs2 = 32'h53000000; bs = 2'b11; check_vec("G5", 4, 32'hED000000);
 
-        // XOR with rs1 (bs=0)
         $display("--- Group 6: XOR with rs1 ---");
-        bs = 2'b00;
+        col = 1'b0; bs = 2'b00;
         mix = 1'b1; rs1 = 32'hDEADBEEF; rs2 = 32'h00000053; check_vec("G6", 1, 32'hF240532E);
         mix = 1'b0; rs1 = 32'hFFFFFFFF; rs2 = 32'h00000053; check_vec("G6", 2, 32'hFFFFFF12);
         mix = 1'b1; rs1 = 32'h2CEDEDC1; rs2 = 32'h00000053; check_vec("G6", 3, 32'h00000000);
 
-        // exhaustive SBox sweep (all 256 input bytes)
         $display("--- Group 7: SBox sweep ---");
         g7_fails = 0;
-        mix = 1'b0; bs = 2'b00; rs1 = 32'h0;
+        col = 1'b0; mix = 1'b0; bs = 2'b00; rs1 = 32'h0;
         for (i = 0; i < 256; i = i + 1) begin
             rs2 = {24'h0, i[7:0]};
             #1;
@@ -171,6 +167,75 @@ module tb_riscv_aes_unit;
         end
         if (g7_fails == 0)
             $display("  pass [G7]: 256 SBox entries verified");
+
+        $display("--- Group 8: aes_col column-fused mode ---");
+
+        // G8.1  All-zero input: SBox(0,0,0,0)=0x63, MixCol, no key
+        col = 1'b1; rs1 = 32'h00000000; rs2 = 32'h00000000;
+        // xt2(0x63)=0xC6, xt3(0x63)=0xA5
+        // row0 = C6^A5^63^63 = 63, row1 = 63^C6^A5^63 = 63
+        // row2 = 63^63^C6^A5 = 63, row3 = A5^63^63^C6 = 63
+        check_vec("G8", 1, 32'h63636363);
+
+        // G8.2  All-zero input with key 0xDEADBEEF
+        rs1 = 32'hDEADBEEF;
+        // 0x63636363 ^ 0xDEADBEEF = 0xBDCEDD8C
+        check_vec("G8", 2, 32'hBDCEDD8C);
+
+        // G8.3  Input [53,00,FF,10]; SBox = [ED,63,16,CA]
+        rs1 = 32'h00000000; rs2 = {8'h10, 8'hFF, 8'h00, 8'h53};
+        // xt2(ED)=C1, xt3(ED)=2C; xt2(63)=C6, xt3(63)=A5
+        // xt2(16)=2C, xt3(16)=3A; xt2(CA)=8F, xt3(CA)=45
+        // row0 = C1^A5^63^8F = 88
+        // row1 = ED^C6^3A^8F = 9E
+        // row2 = ED^63^2C^45 = E7
+        // row3 = 2C^63^16^8F = D6
+        check_vec("G8", 3, 32'hD6E79E88);
+
+        // G8.4  Same input with key 0xFFFFFFFF
+        rs1 = 32'hFFFFFFFF;
+        // 0xD6E79E88 ^ 0xFFFFFFFF = 0x29186177
+        check_vec("G8", 4, 32'h29186177);
+
+        // G8.5  Key varies per byte: 0xAABBCCDD, input [53,00,FF,10]
+        rs1 = 32'hAABBCCDD;
+        // 0xD6E79E88 ^ 0xAABBCCDD = 0x7C5C5255
+        check_vec("G8", 5, 32'h7C5C5255);
+
+        // G8.6  First FIPS-197 round, column 0
+        // After initial AddRoundKey col0=0x193de3be, col1=0xa0f4e22b,
+        // col2=0x9ac68d2a, col3=0xe9f84808
+        // After SubBytes+ShiftRows, column 0 input bytes:
+        //   s0[0]=SBox(19)=d4, s1[1]=SBox(f4)=bf, s2[2]=SBox(8d)=5d, s3[3]=SBox(08)=30
+        // packed LE = {30, 5d, bf, d4}
+        rs1 = 32'h17FEFAA0;  // round key 1 col 0 LE
+        rs2 = 32'h305DBFD4;
+        // xt2(d4)=B3, xt3(d4)=67; xt2(bf)=65, xt3(bf)=DA
+        // xt2(5d)=BA, xt3(5d)=E7; xt2(30)=60, xt3(30)=50
+        // row0 = B3^DA^5D^30 = 04
+        // row1 = D4^65^E7^30 = 66
+        // row2 = D4^BF^BA^50 = 81
+        // row3 = 67^BF^5D^60 = E5
+        // mix = 0xE5816604, XOR rk = 0xE5816604 ^ 0x17FEFAA0 = 0xF27F9CA4
+        check_vec("G8", 6, 32'hF27F9CA4);
+
+        // G8.7  Column nonzero key, zero input: pure round-key passthrough
+        // SBox(0)=0x63, MixCol of [63,63,63,63] = 0x63636363
+        // 0x63636363 ^ 0x12345678 = 0x7157351B
+        rs1 = 32'h12345678; rs2 = 32'h00000000;
+        check_vec("G8", 7, 32'h7157351B);
+
+        // ============================
+        // Group 9: Verify byte mode still works after adding col port
+        // ============================
+        $display("--- Group 9: byte-mode regression ---");
+        col = 1'b0; mix = 1'b1; bs = 2'b00; rs1 = 32'h0;
+        rs2 = 32'h00000053;
+        check_vec("G9", 1, 32'h2CEDEDC1);
+
+        col = 1'b0; mix = 1'b0; bs = 2'b10; rs1 = 32'h0;
+        rs2 = 32'hAABBCCDD;
+        check_vec("G9", 2, 32'h00EA0000);
 
         // Summary
         $display("");

@@ -36,6 +36,16 @@
                   : "r"(src),                                            \
                     "i"(0x11 | ((bs_const) << 5)))
 
+// aes_col rd, rk, col : one full output column per instruction.
+//   SubBytes(rs2)+MixColumns all happen in hardware.
+//   funct7 = {2'b00, 5'b10111} = 0x17, opcode=0x33, funct3=0.
+//   rs1 = round-key word for the target column.
+//   rs2 = 4 ShiftRows'd bytes packed LE for the target column.
+#define AES_COL(result, rk, col)                                          \
+    asm volatile (".insn r 0x33, 0, %3, %0, %1, %2"                      \
+                  : "=r"(result)                                         \
+                  : "r"(rk), "r"(col), "i"(0x17))
+
 // Little-endian byte<->word packing for the AES state and round keys.
 // round_keys[] is uint8_t (possibly unaligned), so we go byte-by-byte
 // rather than risking an unaligned 32-bit load on RV32.
@@ -156,20 +166,20 @@ void add_round_key(uint8_t *state, uint8_t *round_key) {
     }
 }
 
-// Single block AES-128 encryption — Zkne (aes32esmi / aes32esi) accelerated.
+// Single block AES-128 encryption — Zkne (aes32esmi / aes32esi / aes_col) accelerated.
 //
 // State is held in four 32-bit words s[0..3], one per AES column, with row 0
 // in the LSB and row 3 in the MSB (little-endian column packing).
 //
-// For each round, the four output columns are each built as an accumulator
-// chain starting from the round-key word for that column. ShiftRows is
-// folded into the source-word selection: byte `r` of output column `j`
-// comes from byte `r` of input column `(j+r) & 3`. Because aes32es{,m}i
-// reads byte `bs` of rs2, we set bs = r and pick rs2 = s[(j+r) & 3].
+// Main rounds 1..9 use aes_col: 4 ShiftRows'd bytes are packed into rs2,
+// the round-key word in rs1, and the hardware does SubBytes + MixColumns +
+// AddRoundKey for one full output column in a single instruction.
+//
+// Final round 10 uses aes32esi: SubBytes + ShiftRows + AddRoundKey.
 void aes128_encrypt_block(uint8_t *plaintext, uint8_t *round_keys, uint8_t *ciphertext) {
     uint32_t s0, s1, s2, s3;
-    uint32_t t0, t1, t2, t3;
     uint32_t rk0, rk1, rk2, rk3;
+    uint32_t c0, c1, c2, c3;
 
     // Load plaintext (4 columns, little-endian).
     s0 = pack_le32(&plaintext[0]);
@@ -185,46 +195,38 @@ void aes128_encrypt_block(uint8_t *plaintext, uint8_t *round_keys, uint8_t *ciph
     s0 ^= rk0; s1 ^= rk1; s2 ^= rk2; s3 ^= rk3;
 
     // Main rounds 1..9: SubBytes + ShiftRows + MixColumns + AddRoundKey,
-    // fused per-column via aes32esmi.
+    // fused per-column via aes_col.
     for (int round = 1; round < 10; round++) {
         const uint8_t *rkp = &round_keys[round * 16];
-        t0 = pack_le32(&rkp[0]);
-        t1 = pack_le32(&rkp[4]);
-        t2 = pack_le32(&rkp[8]);
-        t3 = pack_le32(&rkp[12]);
+        rk0 = pack_le32(&rkp[0]);
+        rk1 = pack_le32(&rkp[4]);
+        rk2 = pack_le32(&rkp[8]);
+        rk3 = pack_le32(&rkp[12]);
 
-        // Output column 0: source columns (0,1,2,3) for rows (0,1,2,3).
-        AES32ESMI(t0, s0, 0);
-        AES32ESMI(t0, s1, 1);
-        AES32ESMI(t0, s2, 2);
-        AES32ESMI(t0, s3, 3);
-        // Output column 1: source columns (1,2,3,0).
-        AES32ESMI(t1, s1, 0);
-        AES32ESMI(t1, s2, 1);
-        AES32ESMI(t1, s3, 2);
-        AES32ESMI(t1, s0, 3);
-        // Output column 2: source columns (2,3,0,1).
-        AES32ESMI(t2, s2, 0);
-        AES32ESMI(t2, s3, 1);
-        AES32ESMI(t2, s0, 2);
-        AES32ESMI(t2, s1, 3);
-        // Output column 3: source columns (3,0,1,2).
-        AES32ESMI(t3, s3, 0);
-        AES32ESMI(t3, s0, 1);
-        AES32ESMI(t3, s1, 2);
-        AES32ESMI(t3, s2, 3);
+        // Pack ShiftRows'd bytes for each output column.
+        // Col 0: s0[0], s1[1], s2[2], s3[3]
+        c0 = (s0 & 0x000000FF) | (s1 & 0x0000FF00) | (s2 & 0x00FF0000) | (s3 & 0xFF000000);
+        // Col 1: s1[0], s2[1], s3[2], s0[3]
+        c1 = (s1 & 0x000000FF) | (s2 & 0x0000FF00) | (s3 & 0x00FF0000) | (s0 & 0xFF000000);
+        // Col 2: s2[0], s3[1], s0[2], s1[3]
+        c2 = (s2 & 0x000000FF) | (s3 & 0x0000FF00) | (s0 & 0x00FF0000) | (s1 & 0xFF000000);
+        // Col 3: s3[0], s0[1], s1[2], s2[3]
+        c3 = (s3 & 0x000000FF) | (s0 & 0x0000FF00) | (s1 & 0x00FF0000) | (s2 & 0xFF000000);
 
-        s0 = t0; s1 = t1; s2 = t2; s3 = t3;
+        AES_COL(s0, rk0, c0);
+        AES_COL(s1, rk1, c1);
+        AES_COL(s2, rk2, c2);
+        AES_COL(s3, rk3, c3);
     }
 
     // Final round (10): SubBytes + ShiftRows + AddRoundKey (no MixColumns),
     // fused per-column via aes32esi.
     {
         const uint8_t *rkp = &round_keys[10 * 16];
-        t0 = pack_le32(&rkp[0]);
-        t1 = pack_le32(&rkp[4]);
-        t2 = pack_le32(&rkp[8]);
-        t3 = pack_le32(&rkp[12]);
+        uint32_t t0 = pack_le32(&rkp[0]);
+        uint32_t t1 = pack_le32(&rkp[4]);
+        uint32_t t2 = pack_le32(&rkp[8]);
+        uint32_t t3 = pack_le32(&rkp[12]);
 
         AES32ESI(t0, s0, 0);
         AES32ESI(t0, s1, 1);

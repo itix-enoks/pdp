@@ -99,16 +99,19 @@ module cv32e40p_alu
   // ALU_AES_* encoding scheme.
   logic        aes_mix;
   logic [1:0]  aes_bs;
+  logic        aes_col;
   logic [31:0] aes_result;
 
   assign aes_mix   = operator_i[2];
   assign aes_bs    = operator_i[1:0];
+  assign aes_col   = (operator_i[6:3] == 4'b1111);
 
   riscv_aes_unit u_riscv_aes_unit (
       .rs1_i   (operand_a_i),
       .rs2_i   (operand_b_i),
       .bs_i    (aes_bs),
       .mix_i   (aes_mix),
+      .col_i   (aes_col),
       .result_o(aes_result)
   );
 
@@ -997,9 +1000,10 @@ module cv32e40p_alu
       // Division Unit Commands
       ALU_DIV, ALU_DIVU, ALU_REM, ALU_REMU: result_o = result_div;
 
-      // RISC-V Zkne AES (aes32esi / aes32esmi)
+      // RISC-V Zkne AES (aes32esi / aes32esmi / aes_col)
       ALU_AES_ES_BS0, ALU_AES_ES_BS1, ALU_AES_ES_BS2, ALU_AES_ES_BS3,
-      ALU_AES_ESMI_BS0, ALU_AES_ESMI_BS1, ALU_AES_ESMI_BS2, ALU_AES_ESMI_BS3:
+      ALU_AES_ESMI_BS0, ALU_AES_ESMI_BS1, ALU_AES_ESMI_BS2, ALU_AES_ESMI_BS3,
+      ALU_AES_COL:
         result_o = aes_result;
 
       default: ;  // default case to suppress unique warning
